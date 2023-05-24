@@ -1,22 +1,59 @@
 import React, { useState } from "react";
 import './inputName.css'
 import ControllableStates from "./IDorEMAIL";
+import { Button } from "@mui/material";
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import Autocomplete from '@mui/material/Autocomplete';
+
+const options = ['Name', 'E-Mail'];
 
 export default function InputValue(){
     let [userName, setUserName] = useState("");
     let [submitValue, setSubmitValue] = useState("");
-
+    const [value, setValue] = React.useState(options[0]);
+    const [inputValue, setInputValue] = React.useState('');
+  
     return(
-        <div>
-            <ControllableStates/>
         <div className="inputName">
+            <div className="auto">
+            <Autocomplete 
+        value={value}
+        onChange={(event, newValue) => {
+          setValue(newValue);
+        }}
+        inputValue={inputValue}
+        onInputChange={(event, newInputValue) => {
+          setInputValue(newInputValue);
+        }}
+        id="controllable-states-demo"
+        options={options}
+        sx={{ width: 150 }}
+        renderInput={(params) => <TextField {...params} label="To Edit" />}
+      />
+      </div>
+            {/* <ControllableStates/> */}
+            <Box sx={{ '& button': { m: 1 } }}>
             <form>
-        <input onChange={(e) => { setUserName(e.target.value);}} placeholder="Enter the value" className="input"/>
-        <input type="button" value={'submit'} onClick={()=>setSubmitValue(userName)} className="submit"/>
+            <TextField
+            className="text"
+        id="date"
+        label="Enter the Value"
+        type="text"
+        // defaultValue={}
+        onChange={(e) => setUserName(e.target.value)}
+        // inputProps={{ max: today }}
+        InputLabelProps={{
+          shrink: true,
+        }}
+      />
+        <Button variant="contained" size="large">
+          Submit
+        </Button>
         </form>
         
         <>{userName}<></>{submitValue}</>
-        </div>
+        </Box>
         </div>
     );
 }

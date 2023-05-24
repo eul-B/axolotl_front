@@ -30,7 +30,7 @@ import axios from 'axios';
 
     const interval = setInterval(() => {
       fetchData();
-    }, 1000);
+    }, 500);
 
     return () => clearInterval(interval);
   }, []); 
@@ -87,7 +87,7 @@ import axios from 'axios';
           series={series}
           type="heatmap"
           width="850"
-          height="700"
+          height="650"
           
         />
          <div>

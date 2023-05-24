@@ -1,19 +1,15 @@
 .inputName{
-    position: absolute;   
+    display: flex;
+    float: left;
+
+    position: absolute;
     top: 80%;
-    left: 200px
+    left: 30px;
+    width: 100%;
 }
-.input{
-    height: 50px;
-    width: 15vw;
-    border: transparent;
-    border-radius: 1%;
-    font-size: 20px;
+.auto{
+    margin-right: 10px;
 }
-.submit{
-    height: 50px;
-    border: transparent;
-    border-radius: 10%;
-    margin-left: 10px;
-    font-size: 15px;
+.text{
+    width: 430px;
 }

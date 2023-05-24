@@ -3,4 +3,6 @@
     top: 80%;
     left: 30px;
     width: 70px;
+    display: flex;
+    float: left;
 }
