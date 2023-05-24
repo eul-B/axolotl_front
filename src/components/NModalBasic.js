@@ -1,3 +1,4 @@
+import MyCharts from './Heatmap/heatmap';
 import styles from './NModalBasic.module.css';
 import Abox from './Table/AComponent'
 import Bbox from './Table/Bcomponent';
@@ -23,6 +24,7 @@ function ModalBasic({ setModalOpen, id, title, content, writer }) {
                 X
             </button>
             <h1>Image Table</h1>
+            <MyCharts/>
             {/* <p className={styles.tablebody}>
           {data === 1 ? <p>{Array(1).fill(<Abox/>)}</p> : null}
           {data > 1 && data <= 4? <p>{Array(4).fill(<Bbox/>)}</p> : null}

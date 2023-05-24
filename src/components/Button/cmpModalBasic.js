@@ -18,7 +18,7 @@ function cmpModalBasic({ setcmpModalOpen, id, title, content, writer }) {
             <p>
                 <MyListbox/>
                 <Stream/>
-                <InputValue/>                
+                <InputValue/>             
             </p>
         </div>
         
