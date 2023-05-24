@@ -1,0 +1,44 @@
+footer{
+    width: 100%;
+    height: 450px;
+    background-color: #282c34;
+    position: absolute;
+    bottom: 0;
+    color: white;
+    flex-direction: row;   
+    display: flex;
+    justify-content: space-around;
+}
+
+.now{
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;   
+
+}
+
+.low{
+    margin-left: 10px;
+    margin-right: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.first{
+    margin-left: 40px;
+    margin-right: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+.a_div{
+    margin-top: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+.b_div{
+    margin-top: 80px;
+    justify-content: center;
+    align-items: center;
+}
