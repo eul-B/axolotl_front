@@ -1,13 +1,6 @@
 import MyCharts from './Heatmap/heatmap';
+import SearchDate from './Heatmap/searchDate';
 import styles from './NModalBasic.module.css';
-import Abox from './Table/AComponent'
-import Bbox from './Table/Bcomponent';
-import Cbox from './Table/Ccomponent';
-import Dbox from './Table/Dcomponent';
-import Ebox from './Table/Ecomponent';
-import Fbox from './Table/Fcomponent';
-import Gbox from './Table/Gcomponent';
-import Hbox from './Table/Hcomponent';
 
 var data;
 data = 20;
@@ -24,6 +17,7 @@ function ModalBasic({ setModalOpen, id, title, content, writer }) {
                 X
             </button>
             <h1>Image Table</h1>
+            <SearchDate/>
             <MyCharts/>
             {/* <p className={styles.tablebody}>
           {data === 1 ? <p>{Array(1).fill(<Abox/>)}</p> : null}
