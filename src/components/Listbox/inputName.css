@@ -1,0 +1,19 @@
+.inputName{
+    position: absolute;   
+    top: 80%;
+    left: 200px
+}
+.input{
+    height: 50px;
+    width: 15vw;
+    border: transparent;
+    border-radius: 1%;
+    font-size: 20px;
+}
+.submit{
+    height: 50px;
+    border: transparent;
+    border-radius: 10%;
+    margin-left: 10px;
+    font-size: 15px;
+}

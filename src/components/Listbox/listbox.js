@@ -1,0 +1,45 @@
+import * as React from 'react';
+import TextField from '@mui/material/TextField';
+import Autocomplete from '@mui/material/Autocomplete';
+import data from './../Network/data.json'
+import styles from './listbox.css'
+
+export default function ComboBox() {
+    const [value, setValue] = React.useState(null);
+    const [inputValue, setInputValue] = React.useState('');  
+    
+  return (
+    <div>
+      <h1>{value !== null ? `${value.name}` : ''}{' Performance'}</h1>
+        {/* <div>{`value: ${value !== null ? `'${value.name}'` : 'null'}`}</div>
+        <div>{`inputValue: '${inputValue}'`}</div> */}
+    <div>
+      <Autocomplete className='drop'
+    value={value}
+    onChange={(event, newValue) => {
+      setValue(newValue);
+      localStorage.setItem("value", JSON.stringify(newValue));
+    }}
+    inputValue={inputValue}
+    onInputChange={(event, newInputValue) => {
+      setInputValue(newInputValue);
+    }}
+      disablePortal
+      id="combo-box"
+      getOptionLabel={(user) => user.name}
+      
+      options={data.nodes}
+      sx={{ width: 300 }}
+      renderInput={(params) => <TextField {...params} label="name"/>}
+      />
+    </div>
+    <div className='box'>
+      <div className='info'>
+        <p>{'ID  :    '}{value !== null ? `${value.name}` : ''}</p>
+        <>{'E-mail :    '}{value !== null ? `${value.name}` : ''}</>
+        <p>{'IP    :    '}{value !== null ? `${value.gender}` : ''}</p>
+      </div>
+    </div>
+    </div>
+  );
+}

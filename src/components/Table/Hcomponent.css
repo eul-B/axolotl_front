@@ -1,0 +1,10 @@
+.hbox{
+    
+    border: 1px solid;
+    background-color: rgb(100, 255, 255);
+    height: 8vh;
+    width: 8vh;
+    box-sizing: border-box;
+    flex-direction: row;
+    float: left;
+}

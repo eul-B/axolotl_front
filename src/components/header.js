@@ -3,7 +3,6 @@ import logo from './../axolotl.png';
 import { useEffect, useState } from 'react';
 import './header.css'
 import './../App'
-import './Modal'
 
 function Header(props){
     const [time, setTime] = useState(new Date());

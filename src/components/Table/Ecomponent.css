@@ -1,0 +1,10 @@
+.ebox{
+    
+    border: 1px solid;
+    background-color: rgb(100, 255, 255);
+    height: 12vh;
+    width: 12vh;
+    box-sizing: border-box;
+    flex-direction: row;
+    float: left;
+}

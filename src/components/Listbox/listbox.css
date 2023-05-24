@@ -1,0 +1,48 @@
+.listbox {
+    font-family: sans-serif;
+
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  label {
+    display: inline-block;
+  }
+  
+  label > span {
+    display: block;
+    padding-bottom: 10px;
+  }
+  
+  [role="option"]:focus {
+    outline: 0;
+  }
+  
+  [role="combobox"] {
+    
+    user-select: none;
+  }
+
+.drop{
+  align-self: center;
+  width: 30vw;
+  position: absolute;
+  left: 30%;
+  padding-bottom: 30px;
+  z-index: 80;
+}
+.info{
+  margin-top: 60px;
+  align-items: start;
+  position: absolute;
+  left: 40px;
+  border: solid;
+  width: 35vw;
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  padding-left: 30px;
+  font-size: 15px;
+}
