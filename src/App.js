@@ -19,17 +19,19 @@ function App() {
   const [lengthNode, setLength] = useState(0);
 
 useEffect(() => {
-  const fetchData = async () => {
+  const detectModify = async()=>{
     try {
       const noderesponse = await axios.get('http://localhost:7000/nodes');
       const linkresponse = await axios.get('http://localhost:7000/links');
       if (Array.isArray(noderesponse.data) && Array.isArray(linkresponse.data)) {
-        const modifiedData = noderesponse.data;
-        const modifiedTmp = linkresponse.data;
-        setNode(modifiedData);
-        setLink(modifiedTmp);
-        setLength(Object.keys(modifiedData).length);
-        localStorage.setItem('length', (modifiedData).length)
+        if (noderesponse.status !== 304 || linkresponse.status !== 304) {
+          const modifiedData = noderesponse.data;
+          const modifiedTmp = linkresponse.data;
+          setNode(modifiedData);
+          setLink(modifiedTmp);
+          setLength(Object.keys(modifiedData).length);
+          localStorage.setItem('length', modifiedData.length);
+        }
       } else {
         setNode([]);
         setLink([]);
@@ -37,24 +39,10 @@ useEffect(() => {
     } catch (error) {
       console.error(error);
     }
-  };
+  }
+  detectModify();
+  
 
-  fetchData();
-
-  // const fetchNew = setfetchNew(()=>{
-  //     if(noderesponse.status != 304 && linkresponse.status != 304){
-  //       fetchData();
-  //     }
-  // })
-  //   const interval = setInterval(() => {
-  //   fetchNew();
-  // }, 5000);
-
-  const interval = setInterval(() => {
-    fetchData();
-  }, 5000);
-
-  // return () => clearInterval(interval);
 }, []); 
 
 
@@ -67,6 +55,7 @@ useEffect(() => {
 
   return (
     <div>
+      <>{node.status}</>
     <Header/>
     <NModal/>    
     <CmpModal/>

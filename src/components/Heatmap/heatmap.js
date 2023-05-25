@@ -25,7 +25,7 @@ import axios from 'axios';
         setDate([]);
         setCpu([]);
         setMem([]);
-        setNet([]);
+        setNet([]);   
 
         const nameres = await axios.get('http://localhost:7000/nodes');
         if (Array.isArray(nameres.data)) {
