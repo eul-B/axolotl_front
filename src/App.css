@@ -1,7 +1,9 @@
 .App {
   text-align: center;
 }
-
+body{
+  overflow: hidden;
+}
 .App-logo {
   height: 10vmin;
   pointer-events: none;

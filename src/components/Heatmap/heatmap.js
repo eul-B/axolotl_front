@@ -1,4 +1,3 @@
-import { useQuery } from '@tanstack/react-query';
 import React, { useEffect, useState } from 'react';
 import Chart from "react-apexcharts";
 import axios from 'axios';
@@ -30,7 +29,7 @@ import axios from 'axios';
 
     const interval = setInterval(() => {
       fetchData();
-    }, 500);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []); 
@@ -87,7 +86,7 @@ import axios from 'axios';
           series={series}
           type="heatmap"
           width="850"
-          height="650"
+          height="600"
           
         />
          <div>

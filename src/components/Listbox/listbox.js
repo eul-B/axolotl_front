@@ -3,6 +3,7 @@ import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import data from './../Network/data.json'
 import styles from './listbox.css'
+import { styled } from '@mui/material/styles';
 
 export default function ComboBox() {
     const [value, setValue] = React.useState(null);
@@ -29,7 +30,7 @@ export default function ComboBox() {
       getOptionLabel={(user) => user.name}
       
       options={data.nodes}
-      sx={{ width: 300 }}
+      sx={{ width: 250 }}
       renderInput={(params) => <TextField {...params} label="name"/>}
       />
     </div>

@@ -47,12 +47,10 @@ export default function InputValue(){
           shrink: true,
         }}
       />
-        <Button variant="contained" size="large">
+        <Button variant="contained" size="large" onClick={()=>setSubmitValue(userName)}>
           Submit
         </Button>
         </form>
-        
-        <>{userName}<></>{submitValue}</>
         </Box>
         </div>
     );
