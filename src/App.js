@@ -16,6 +16,7 @@ function App() {
 
   const [node, setNode] = useState([]);
   const [link, setLink] = useState([]);
+  const [lengthNode, setLength] = useState(0);
 
 useEffect(() => {
   const fetchData = async () => {
@@ -23,11 +24,12 @@ useEffect(() => {
       const noderesponse = await axios.get('http://localhost:7000/nodes');
       const linkresponse = await axios.get('http://localhost:7000/links');
       if (Array.isArray(noderesponse.data) && Array.isArray(linkresponse.data)) {
-        const lenth = Object.keys().length
         const modifiedData = noderesponse.data;
         const modifiedTmp = linkresponse.data;
         setNode(modifiedData);
         setLink(modifiedTmp);
+        setLength(Object.keys(modifiedData).length);
+        localStorage.setItem('length', (modifiedData).length)
       } else {
         setNode([]);
         setLink([]);
@@ -36,22 +38,6 @@ useEffect(() => {
       console.error(error);
     }
   };
-
-  // const fetchNew = async () => {
-  //   try{  
-  //   const noderesponse = await axios.get('http://localhost:7000/nodes');
-  //   const linkresponse = await axios.get('http://localhost:7000/links');
-  //   if (Array.isArray(noderesponse.data) && Array.isArray(linkresponse.data)) {
-  //     const modifiedData = noderesponse.data;
-  //     const modifiedTmp = linkresponse.data;
-  //   } else {
-  //     setNode([]);
-  //     setLink([]);
-  //   }
-  //   }catch(error){
-  //     console.log(error);
-  //   }
-  // };
 
   fetchData();
 
