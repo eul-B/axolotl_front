@@ -14,7 +14,7 @@ import RealTime from './backToRealTime';
     var lengthNode = localStorage.getItem('length')
 
     const [aname, setName] = useState([]);
-
+ 
     const handleStopFetching = () => {
       setFetchingData(false);
     };
