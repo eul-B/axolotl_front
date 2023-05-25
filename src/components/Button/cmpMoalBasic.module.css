@@ -9,7 +9,7 @@
   
   
   /*스타일링*/
-  background-color: rgb(183, 209, 199);
+  background-color: rgba(50, 50, 155, 0.5);
   padding: 20px;
   border-radius: 10px;
   min-height: 100%-40vh;
@@ -24,7 +24,7 @@
   display: flex;
   align-content: center;
   align-items: center;
-  
+  color:white
   }
   
   /* 모달창 내부 X버튼 */

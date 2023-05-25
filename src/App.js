@@ -14,33 +14,64 @@ import axios from 'axios';
 
 function App() {
 
+  const [node, setNode] = useState([]);
+  const [link, setLink] = useState([]);
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await axios.get('http://localhost:8000/temperature');
-  //       if (Array.isArray(response.data)) {
-  //         const modifiedData = response.data.map((item) => item.date);
-  //         const modifiedTmp = response.data.map((item) => item.average_temp);
-  //         setDate(modifiedData);
-  //         setAverageTemp(modifiedTmp);
-  //       } else {
-  //         setDate([]);
-  //         setAverageTemp([]);
-  //       }
-  //     } catch (error) {
-  //       console.error(error);
+useEffect(() => {
+  const fetchData = async () => {
+    try {
+      const noderesponse = await axios.get('http://localhost:7000/nodes');
+      const linkresponse = await axios.get('http://localhost:7000/links');
+      if (Array.isArray(noderesponse.data) && Array.isArray(linkresponse.data)) {
+        const lenth = Object.keys().length
+        const modifiedData = noderesponse.data;
+        const modifiedTmp = linkresponse.data;
+        setNode(modifiedData);
+        setLink(modifiedTmp);
+      } else {
+        setNode([]);
+        setLink([]);
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  // const fetchNew = async () => {
+  //   try{  
+  //   const noderesponse = await axios.get('http://localhost:7000/nodes');
+  //   const linkresponse = await axios.get('http://localhost:7000/links');
+  //   if (Array.isArray(noderesponse.data) && Array.isArray(linkresponse.data)) {
+  //     const modifiedData = noderesponse.data;
+  //     const modifiedTmp = linkresponse.data;
+  //   } else {
+  //     setNode([]);
+  //     setLink([]);
+  //   }
+  //   }catch(error){
+  //     console.log(error);
+  //   }
+  // };
+
+  fetchData();
+
+  // const fetchNew = setfetchNew(()=>{
+  //     if(noderesponse.status != 304 && linkresponse.status != 304){
+  //       fetchData();
   //     }
-  //   };
-
-  //   fetchData();
-
+  // })
   //   const interval = setInterval(() => {
-  //     fetchData();
-  //   }, 5000);
+  //   fetchNew();
+  // }, 5000);
 
-  //   return () => clearInterval(interval);
-  // }, []); 
+  const interval = setInterval(() => {
+    fetchData();
+  }, 5000);
+
+  // return () => clearInterval(interval);
+}, []); 
+
+
 
   const nodeHoverTooltip = React.useCallback((node) => {
     return `<div>     
@@ -54,9 +85,8 @@ function App() {
     <NModal/>    
     <CmpModal/>
     <section className="Main">
-      <ForceGraph linksData={data.links} nodesData={data.nodes} nodeHoverTooltip={nodeHoverTooltip}/>
-    </section> 
-    {/* <Body/> */} 
+      <ForceGraph linksData={link} nodesData={node} nodeHoverTooltip={nodeHoverTooltip}/>
+    </section>
     </div>
   );
 

@@ -28,7 +28,6 @@ export default function ComboBox() {
       disablePortal
       id="combo-box"
       getOptionLabel={(user) => user.name}
-      
       options={data.nodes}
       sx={{ width: 250 }}
       renderInput={(params) => <TextField {...params} label="name"/>}

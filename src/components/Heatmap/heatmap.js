@@ -4,21 +4,28 @@ import axios from 'axios';
 
 
   const MyCharts = () => {
-    const [averageTemp, setAverageTemp] = useState([]);
+    const [cpu, setCpu] = useState([]);
     const [date, setDate] = useState([]);
-
+    const [mem, setMem] = useState([]);
+    const[net, setNet] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/temperature');
+        const response = await axios.get('http://localhost:8000/host');
         if (Array.isArray(response.data)) {
           const modifiedData = response.data.map((item) => item.date);
-          const modifiedTmp = response.data.map((item) => item.average_temp);
+          const modifiedCpu = response.data.map((item) => item.cpu);
+          const modifiedMem = response.data.map((item) => item.mem);
+          const modifiedNet = response.data.map((item) => item.net);
           setDate(modifiedData);
-          setAverageTemp(modifiedTmp);
+          setCpu(modifiedCpu);
+          setMem(modifiedMem);
+          setNet(modifiedNet);
         } else {
           setDate([]);
-          setAverageTemp([]);
+          setCpu([]);
+          setMem([]);
+          setNet([]);
         }
       } catch (error) {
         console.error(error);
@@ -53,13 +60,14 @@ import axios from 'axios';
    const series = [ //data on the y-axis
       {
         name: "",
-        data: averageTemp
+        data: cpu
       },{
         name: "",
-        data: averageTemp
-      },{
+        data: mem
+      },
+      {
         name: "",
-        data: averageTemp
+        data: net
       }
     ];
     const options = { //data on the x-axis
@@ -86,7 +94,7 @@ import axios from 'axios';
           series={series}
           type="heatmap"
           width="850"
-          height="600"
+          height="650"
           
         />
          <div>
