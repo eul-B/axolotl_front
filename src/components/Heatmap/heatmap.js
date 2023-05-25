@@ -1,17 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import Chart from "react-apexcharts";
 import axios from 'axios';
-
+import SearchDates from './searchDate';
+import RealTime from './backToRealTime';
 
   const MyCharts = () => {
     const [cpu, setCpu] = useState([]);
     const [date, setDate] = useState([]);
     const [mem, setMem] = useState([]);
     const[net, setNet] = useState([]);
+    const [fetchingData, setFetchingData] = useState(true);
 
     var lengthNode = localStorage.getItem('length')
 
     const [aname, setName] = useState([]);
+
+    const handleStopFetching = () => {
+      setFetchingData(false);
+    };
+    const handleStartFetching = () => {
+      setFetchingData(true);
+    };
     
     // var series = [];
     
@@ -56,16 +65,13 @@ import axios from 'axios';
         console.error(error);
       }
     };
-
-    fetchData();
-
-    const interval = setInterval(() => {
+    
+    if (fetchingData) {
       fetchData();
-    }, 5000);
-
-    return () => clearInterval(interval);
-
-  }, []); 
+      const interval = setInterval(fetchData, 5000); // 일정 간격으로 패치 실행
+      return () => clearInterval(interval); // 컴포넌트 언마운트 시 패치 중지
+    }
+  }, [fetchingData]);
 
   
   const series = [];
@@ -87,7 +93,7 @@ import axios from 'axios';
     );
   }
 
-
+  
     const options = { //data on the x-axis
     chart: { id: 'bar-chart'},
     xaxis: {
@@ -99,7 +105,7 @@ import axios from 'axios';
     colors:["#000000", "#FF0000", "#0000FF"],
     grid:{
       show:false
-    },
+    },   
     stroke:{
       width:0
     },
@@ -110,21 +116,16 @@ import axios from 'axios';
   
     return (
       <div>
+        <SearchDates onStopFetching={handleStopFetching} />
+        <RealTime onStartFetching={handleStartFetching}/>
         <Chart
           options={options}
           series={series}
           type="heatmap"
           width="850"
           height="600"
-          
         />
-         <div>
-          {/* {JSON.stringify(date)} */}
-          
-      {/* { result.isLoading && 'loading' }
-      { result.error && 'error' }
-      { result.data && result.data.name } */}
-    </div>
+        
       </div>
     )
   }

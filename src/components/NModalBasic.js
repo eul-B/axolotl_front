@@ -17,7 +17,7 @@ function ModalBasic({ setModalOpen, id, title, content, writer }) {
                 X
             </button>
             <h1>Image Table</h1>
-            <SearchDate/>
+            {/* <SearchDate/> */}
             <MyCharts/>
             {/* <p className={styles.tablebody}>
           {data === 1 ? <p>{Array(1).fill(<Abox/>)}</p> : null}
