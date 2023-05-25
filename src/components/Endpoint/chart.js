@@ -1,23 +1,35 @@
 import React, { useEffect, useState } from 'react';
 import Chart from "react-apexcharts";
 import axios from 'axios';
+import './chart.css'
 
   const Stream = () => {
-    const [averageTemp, setAverageTemp] = useState([]);
+    const [cpu, setCpu] = useState([]);
     const [date, setDate] = useState([]);
+    const [mem, setMem] = useState([]);
+    const[net, setNet] = useState([]);
+    var selected = JSON.parse(localStorage.getItem('value'))
+    
+    toString(selected.id)
 
   useEffect(() => {
     const fetchData = async () => {
-      try {
-        const response = await axios.get('http://localhost:8000/');
+      try { 
+        const response = await axios.get('http://localhost:8000/' + selected.id);
         if (Array.isArray(response.data)) {
           const modifiedData = response.data.map((item) => item.date);
-          const modifiedTmp = response.data.map((item) => item.cpu);
+          const modifiedCpu = response.data.map((item) => item.cpu);
+          const modifiedMem = response.data.map((item) => item.mem);
+          const modifiedNet = response.data.map((item) => item.net);
           setDate(modifiedData);
-          setAverageTemp(modifiedTmp);
+          setCpu(modifiedCpu);
+          setMem(modifiedMem);
+          setNet(modifiedNet);
         } else {
           setDate([]);
-          setAverageTemp([]);
+          setCpu([]);
+          setMem([]);
+          setNet([]);
         }
       } catch (error) {
         console.error(error);
@@ -36,13 +48,13 @@ import axios from 'axios';
    const series = [ //data on the y-axis
       {
         name: "",
-        data: averageTemp
+        data: cpu
       },{
         name: "",
-        data: averageTemp
+        data: mem
       },{
         name: "",
-        data: averageTemp
+        data: net
       }
     ];
     const options = { //data on the x-axis
@@ -63,13 +75,13 @@ import axios from 'axios';
   };
   
     return (
-      <div>
+      <div className='stream'>
         <Chart
           options={options}
           series={series}
           type="area"
           width="700"
-          height="500"
+          height="400"
         />
         <div>
           {/* {JSON.stringify(date)} */}

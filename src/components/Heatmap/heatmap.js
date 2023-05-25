@@ -35,7 +35,7 @@ import axios from 'axios';
           setName([]);
         }
         for(let i = 0;i < lengthNode;i++){
-        const response = await axios.get('http://localhost:8000/'+aname[i]);
+        const response = await axios.get('http://localhost:8000/'+ aname[i]);
         if (Array.isArray(response.data)) {
           const modifiedData = response.data.map((item) => item.date);
           const modifiedCpu = response.data.map((item) => item.cpu);
@@ -64,6 +64,7 @@ import axios from 'axios';
     }, 5000);
 
     return () => clearInterval(interval);
+
   }, []); 
 
   
@@ -114,7 +115,7 @@ import axios from 'axios';
           series={series}
           type="heatmap"
           width="850"
-          height="650"
+          height="600"
           
         />
          <div>

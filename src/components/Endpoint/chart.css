@@ -1,5 +1,6 @@
 .stream{
     position: absolute;
-    top: 30%;
-    left:0
+    top: 300px;
+    left:0;
+    padding-right: 10;
 }

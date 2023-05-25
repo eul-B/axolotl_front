@@ -9,7 +9,8 @@
   
   
   /*스타일링*/
-  background-color: rgba(50, 50, 155, 0.5);
+  /* background-color: rgba(50, 50, 155, 0.5); */
+  background-color:darkcyan;
   padding: 20px;
   border-radius: 10px;
   min-height: 100%-40vh;
