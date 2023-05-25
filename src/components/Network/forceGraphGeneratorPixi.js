@@ -48,7 +48,20 @@ export function runForceGraphPixi(
     div.transition().duration(200).style("opacity", 0);
   };
 
-  const colorScale = (num) => parseInt(color().slice(1), 16);
+  // const colorScale = (num) => parseInt(color().slice(1), 16);
+
+  //색상 수정 코드
+  const colorScale = (id) => {
+    if (id % 4 === 0) {
+      return 0xff0000; // 조건 1에 해당하는 색상 (빨간색)
+    } else if (id % 4 === 1) {
+      return 0x00ff00; // 조건 2에 해당하는 색상 (초록색)
+    } else if (id % 4 === 2) {
+      return 0x0000ff; // 조건 3에 해당하는 색상 (파란색)
+    } else {
+      return 0xffff00; // 조건 4에 해당하는 색상 (노란색)
+    }
+  };
 
   function onDragStart(evt) {
     viewport.plugins.pause('drag');
