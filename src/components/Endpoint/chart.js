@@ -10,8 +10,6 @@ import './chart.css'
     const[net, setNet] = useState([]);
     var selected = JSON.parse(localStorage.getItem('value'))
     
-    toString(selected.id)
-
   useEffect(() => {
     const fetchData = async () => {
       try { 
@@ -57,22 +55,31 @@ import './chart.css'
         data: net
       }
     ];
-    const options = { //data on the x-axis
-    // chart: { id: 'bar-chart'},
-    xaxis: {
-      categories: date
-    },
-    dataLabels: {
-      enabled: false
-    },
-    colors:["#000000", "#FF0000", "#0000FF"],
-    grid:{
-      show:false
-    },
-    stroke:{
-      width:0
-    }
-  };
+
+    const options = {
+      xaxis: {
+        categories: date
+      },
+      dataLabels: {
+        enabled: false
+      },
+      colors: ["#000000", "#FF0000", "#0000FF"],
+      grid: {
+        show: false
+      },
+      stroke: {
+        width: 0
+      },
+      tooltip: {
+        style: {
+          fontSize: '12px',
+          color: '#000000' // 툴팁 글씨 색을 빨간색으로 설정
+        }
+      },
+      marker:{
+        foreColor: "#000000"
+      }
+    };
   
     return (
       <div className='stream'>
