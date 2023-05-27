@@ -8,10 +8,12 @@ import './chart.css'
     const [date, setDate] = useState([]);
     const [mem, setMem] = useState([]);
     const[net, setNet] = useState([]);
-    var selected = JSON.parse(localStorage.getItem('value'))
+    const [local, setLocal] = useState([localStorage.getItem('value')]);
+    
     
   useEffect(() => {
     const fetchData = async () => {
+      var selected = JSON.parse(localStorage.getItem('value'))
       try { 
         const response = await axios.get('http://localhost:8000/' + selected.id);
         if (Array.isArray(response.data)) {
@@ -38,7 +40,7 @@ import './chart.css'
 
     const interval = setInterval(() => {
       fetchData();
-    }, 5000);
+    }, 1000);
 
     return () => clearInterval(interval);
   }, []); 
