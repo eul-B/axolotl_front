@@ -3,57 +3,57 @@
     {
       "id": 1,
       "name": "Seohyun",
-      "ip": "male"
+      "email": "male"
     },
     {
       "id": 2,
       "name": "Jihye",
-      "ip": "female"
+      "email": "female"
     },
     {
       "id": 3,
       "name": "Haneul",
-      "ip": "female"
+      "email": "female"
     },
     {
       "id": 4,
       "name": "Gyusub",
-      "ip": "male"
+      "email": "male"
     },
     {
       "id": 5,
       "name": "Seungchan",
-      "ip": "female"
+      "email": "female"
     },
     {
       "id": "qwe",
       "name": "Woohyeop",
-      "ip": "female"
+      "email": "female"
     },
     {
       "id": "zxc",
       "name": "Sulgi",
-      "ip": "male"
+      "email": "male"
     },
     {
       "id": "asdf",
       "name": "Nuru",
-      "ip": "female"
+      "email": "female"
     },
     {
       "id": "pok",
       "name": "Maru",
-      "ip": "female"
+      "email": "female"
     },
     {
       "id": "mkjs",
       "name": "Huchu",
-      "ip": "female"
+      "email": "female"
     },
     {
       "id": 11,
       "name": "Squar",
-      "ip": "female"
+      "email": "female"
     }
   ],
   "links": [

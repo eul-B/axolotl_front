@@ -5,14 +5,54 @@ import { Button } from "@mui/material";
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
+import axios from "axios";
 
 const options = ['Name', 'E-Mail'];
 
 export default function InputValue(){
+     var selected = JSON.parse(localStorage.getItem('value'))
     let [userName, setUserName] = useState("");
     let [submitValue, setSubmitValue] = useState("");
     const [value, setValue] = React.useState(options[0]);
     const [inputValue, setInputValue] = React.useState('');
+
+    const postName = async () =>{
+      axios({
+        method: "post",
+        url: "http://localhost:5000/insert_user",
+        data:{
+          id: `${selected.id}`,
+          name: `${submitValue}`,
+          email:`${selected.email}`
+        },
+      }).then((res)=>{
+        console.log(res);
+      });
+    }
+
+    const postMail = async () =>{
+      axios({
+        method: "post",
+        url: "http://localhost:5000/insert_user",
+        data:{
+          id: `${selected.id}`,
+          name: `${selected.name}`,
+          email:`${submitValue}`
+        },
+      }).then((res)=>{
+        console.log(res);
+      });
+    }
+
+    const ClickName= (userName)=>{
+      setSubmitValue(userName);
+      postName();
+    }
+
+    const ClickMail = (userName)=>{
+      setSubmitValue(userName);
+      postMail();
+    }
   
     return(
         <div className="inputName">
@@ -47,7 +87,7 @@ export default function InputValue(){
           shrink: true,
         }}
       />
-        <Button variant="contained" size="large" onClick={()=>setSubmitValue(userName)}>
+        <Button variant="contained" size="large" onClick={()=>value === options[0]?ClickName(inputValue):ClickMail(inputValue)}>
           Submit
         </Button>
         </form>

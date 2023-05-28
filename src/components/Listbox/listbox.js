@@ -38,7 +38,6 @@ export default function ComboBox() {
       <div className='info'>
         {/* <p>{'Name  :    '}{value !== null ? `${value.name}` : ''}</p> */}
         <>{'E-mail :    '}{value !== null ? `${value.name}` : ''}</>
-        <p>{'IP    :    '}{value !== null ? `${value.ip}` : ''}</p>
       </div>
     </div>
     </div>
