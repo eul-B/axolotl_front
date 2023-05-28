@@ -60,10 +60,16 @@ import './chart.css'
 
     const options = {
       xaxis: {
-        categories: date.reverse()
+        categories: date
       },
       dataLabels: {
         enabled: false
+      },
+      chart: {
+        toolbar: {
+          show: false,
+        }
+        
       },
       colors: ["#000000", "#FF0000", "#0000FF"],
       grid: {
@@ -85,8 +91,12 @@ import './chart.css'
       },
       marker:{
         foreColor: "#000000"
-      }
-    };
+      },
+      yaxis: {
+        max: 100,
+        min: 0
+      },
+    }
   
     return (
       <div className='stream'>

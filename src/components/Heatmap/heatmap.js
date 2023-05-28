@@ -10,6 +10,8 @@ const MyCharts = () => {
   const [nodeNames, setNodeNames] = useState([]);
   const [name, setName] = useState([]);
   const [combinedData, setCombinedData] = useState([]);
+  
+  const [threshold, setThreshold] = useState(80);
 
   const handleStopFetching = () => {
     setFetchingData(false);
@@ -66,6 +68,12 @@ if (Array.isArray(nameres.data)) {
     }
   }, [fetchingData, nodeNames]);
 
+ 
+
+  const handleThresholdAlert = (nodeName, dataType) => {
+    // alert(`The ${dataType} value of ${nodeName} has exceeded the threshold.`);
+  };
+
 
 
   const series = data.flatMap((nodeData, nodeIndex) => {
@@ -78,6 +86,9 @@ if (Array.isArray(nameres.data)) {
     ];
   });
 
+
+  
+
   const options = {
     chart: { id: 'bar-chart' },
     xaxis: { categories: data.length > 0 ? data[0].map((item) => item.date).reverse() : [] },
@@ -85,25 +96,27 @@ if (Array.isArray(nameres.data)) {
     colors: ["#000000", "#FF0000", "#0000FF"],
     grid: { show: false },
     stroke: { width: 0 },
-    tooltip: {
-      enabled: true,
-      followCursor: true
-    },
+    
     yaxis: { show: false },
     plotOptions: {
       heatmap: {
           radius: 2,
-          shadeIntensity: 0.5,
+        enableShades: true,
           distributed: false,
           useFillColorAsStroke: false,
           colorScale: {
-            inverse: false,
+            // ranges:[{
+            //     from: threshold,
+            //     to: 100,
+            //     color: "#000000",
+            //     foreColor: "#000000",
+            // }],
             min: 0,
             max: 100
-          },        
+          },
+        }
       }
-  }
-  };
+    };
 
   return (
     <div>
