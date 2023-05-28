@@ -10,10 +10,9 @@ export default function RealTime({onStartFetching}){
     return(
     <div>
         <Button variant="contained" size="large" onClick={handleClick}>
-            다시 실시간으로 패치하는 버튼
+            Realtime
         </Button>
     </div>    
     )
  
 }
-

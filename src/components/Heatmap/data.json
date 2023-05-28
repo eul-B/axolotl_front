@@ -2,197 +2,197 @@
   "1":[
     {
       "cpu" : 10,
-      "mem" : 30,
-      "net" : 12,
+      "memory" : 30,
+      "network" : 12,
       "date": "03/01/2023"
     },{
       "cpu" : 12,
-      "mem" : 20,
-      "net" : 2,
-      "date": "03/01/2023"
+      "memory" : 80,
+      "network" : 2,
+      "date": "03/02/2023"
     },{
       "cpu" : 22,
-      "mem" : 10,
-      "net" : 32,
-      "date": "03/01/2023"
+      "memory" : 10,
+      "network" : 32,
+      "date": "03/03/2023"
     }
   ],
   "2":[
     {
       "cpu" : 20,
-      "mem" : 10,
-      "net" : 2,
+      "memory" : 10,
+      "network" : 2,
       "date": "03/01/2023"
     },{
       "cpu" : 32,
-      "mem" : 10,
-      "net" : 22,
+      "memory" : 10,
+      "network" : 22,
       "date": "03/01/2023"
     },{
       "cpu" : 12,
-      "mem" : 30,
-      "net" : 2,
+      "memory" : 30,
+      "network" : 2,
       "date": "03/01/2023"
     }
   ],
   "3":[
     {
       "cpu" : 20,
-      "mem" : 10,
-      "net" : 2,
+      "memory" : 10,
+      "network" : 2,
       "date": "03/01/2023"
     },{
       "cpu" : 32,
-      "mem" : 10,
-      "net" : 22,
+      "memory" : 10,
+      "network" : 22,
       "date": "03/01/2023"
     },{
       "cpu" : 12,
-      "mem" : 30,
-      "net" : 2,
+      "memory" : 30,
+      "network" : 2,
       "date": "03/01/2023"
     }
   ],
   "4":[
     {
       "cpu" : 20,
-      "mem" : 10,
-      "net" : 2,
+      "memory" : 10,
+      "network" : 2,
       "date": "03/01/2023"
     },{
       "cpu" : 32,
-      "mem" : 10,
-      "net" : 22,
+      "memory" : 10,
+      "network" : 22,
       "date": "03/01/2023"
     },{
       "cpu" : 12,
-      "mem" : 30,
-      "net" : 2,
+      "memory" : 30,
+      "network" : 2,
       "date": "03/01/2023"
     }
   ],
   "5":[
     {
       "cpu" : 20,
-      "mem" : 10,
-      "net" : 2,
+      "memory" : 10,
+      "network" : 2,
       "date": "03/01/2023"
     },{
       "cpu" : 32,
-      "mem" : 10,
-      "net" : 22,
+      "memory" : 10,
+      "network" : 22,
       "date": "03/01/2023"
     },{
       "cpu" : 12,
-      "mem" : 30,
-      "net" : 2,
+      "memory" : 30,
+      "network" : 2,
       "date": "03/01/2023"
     }
   ],
-  "6":[
+  "qwe":[
     {
       "cpu" : 20,
-      "mem" : 10,
-      "net" : 2,
+      "memory" : 10,
+      "network" : 2,
       "date": "03/01/2023"
     },{
       "cpu" : 32,
-      "mem" : 10,
-      "net" : 22,
+      "memory" : 10,
+      "network" : 22,
       "date": "03/01/2023"
     },{
       "cpu" : 12,
-      "mem" : 30,
-      "net" : 2,
+      "memory" : 30,
+      "network" : 2,
       "date": "03/01/2023"
     }
   ],
-  "7":[
+  "zxc":[
     {
       "cpu" : 20,
-      "mem" : 10,
-      "net" : 2,
+      "memory" : 10,
+      "network" : 2,
       "date": "03/01/2023"
     },{
       "cpu" : 32,
-      "mem" : 10,
-      "net" : 22,
+      "memory" : 10,
+      "network" : 22,
       "date": "03/01/2023"
     },{
       "cpu" : 12,
-      "mem" : 30,
-      "net" : 2,
+      "memory" : 30,
+      "network" : 2,
       "date": "03/01/2023"
     }
   ],
-  "8":[
+  "asdf":[
     {
       "cpu" : 20,
-      "mem" : 10,
-      "net" : 2,
+      "memory" : 10,
+      "network" : 2,
       "date": "03/01/2023"
     },{
       "cpu" : 32,
-      "mem" : 10,
-      "net" : 22,
+      "memory" : 10,
+      "network" : 22,
       "date": "03/01/2023"
     },{
       "cpu" : 12,
-      "mem" : 30,
-      "net" : 2,
+      "memory" : 30,
+      "network" : 2,
       "date": "03/01/2023"
     }
   ],
-  "9":[
+  "pok":[
     {
       "cpu" : 20,
-      "mem" : 10,
-      "net" : 2,
+      "memory" : 10,
+      "network" : 2,
       "date": "03/01/2023"
     },{
       "cpu" : 32,
-      "mem" : 10,
-      "net" : 22,
+      "memory" : 10,
+      "network" : 22,
       "date": "03/01/2023"
     },{
       "cpu" : 12,
-      "mem" : 30,
-      "net" : 2,
+      "memory" : 30,
+      "network" : 2,
       "date": "03/01/2023"
     }
   ],
-  "10":[
+  "mkjs":[
     {
       "cpu" : 20,
-      "mem" : 10,
-      "net" : 2,
+      "memory" : 10,
+      "network" : 2,
       "date": "03/01/2023"
     },{
       "cpu" : 32,
-      "mem" : 10,
-      "net" : 22,
+      "memory" : 10,
+      "network" : 22,
       "date": "03/01/2023"
     },{
       "cpu" : 12,
-      "mem" : 30,
-      "net" : 2,
+      "memory" : 30,
+      "network" : 2,
       "date": "03/01/2023"
     }
   ],"11":[
     {
       "cpu" : 10,
-      "mem" : 14,
-      "net" : 6,
+      "memory" : 14,
+      "network" : 6,
       "date": "03/01/2023"
     },{
       "cpu" : 12,
-      "mem" : 20,
-      "net" : 2,
+      "memory" : 20,
+      "network" : 2,
       "date": "03/01/2023"
     },{
       "cpu" : 32,
-      "mem" : 10,
-      "net" : 22,
+      "memory" : 10,
+      "network" : 22,
       "date": "03/01/2023"
     }
   ]

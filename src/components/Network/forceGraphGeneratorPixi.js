@@ -52,14 +52,10 @@ export function runForceGraphPixi(
 
   //색상 수정 코드
   const colorScale = (id) => {
-    if (id % 4 === 0) {
-      return 0xff0000; // 조건 1에 해당하는 색상 (빨간색)
-    } else if (id % 4 === 1) {
-      return 0x00ff00; // 조건 2에 해당하는 색상 (초록색)
-    } else if (id % 4 === 2) {
-      return 0x0000ff; // 조건 3에 해당하는 색상 (파란색)
+    if (typeof(id) === typeof(1)) {
+      return 0xDAE3F3; // 조건 1에 해당하는 색상 (빨간색)
     } else {
-      return 0xffff00; // 조건 4에 해당하는 색상 (노란색)
+      return 0x7193D1; // 조건 2에 해당하는 색상 (초록색)
     }
   };
 
@@ -134,7 +130,7 @@ export function runForceGraphPixi(
     node.gfx = new PIXI.Graphics();
     node.gfx.lineStyle(1, 0xD3D3D3);
     node.gfx.beginFill(colorScale(node.id));
-    node.gfx.drawCircle(0, 0, 24);
+    node.gfx.drawCircle(0, 0, 30);
     node.gfx.endFill();
     node.gfx
         // events for click

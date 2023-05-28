@@ -2,106 +2,83 @@
   "nodes":[
     {
       "id": 1,
-      "name": "Andy",
-      "gender": "male"
+      "name": "Seohyun",
+      "ip": "male"
     },
     {
       "id": 2,
-      "name": "Betty",
-      "gender": "female"
+      "name": "Jihye",
+      "ip": "female"
     },
     {
       "id": 3,
-      "name": "Cate",
-      "gender": "female"
+      "name": "Haneul",
+      "ip": "female"
     },
     {
       "id": 4,
-      "name": "Dave",
-      "gender": "male"
+      "name": "Gyusub",
+      "ip": "male"
     },
     {
       "id": 5,
-      "name": "Ellen",
-      "gender": "female"
+      "name": "Seungchan",
+      "ip": "female"
     },
     {
-      "id": 6,
-      "name": "Fiona",
-      "gender": "female"
+      "id": "qwe",
+      "name": "Woohyeop",
+      "ip": "female"
     },
     {
-      "id": 7,
-      "name": "Garry",
-      "gender": "male"
+      "id": "zxc",
+      "name": "Sulgi",
+      "ip": "male"
     },
     {
-      "id": 8,
-      "name": "Holly",
-      "gender": "female"
+      "id": "asdf",
+      "name": "Nuru",
+      "ip": "female"
     },
     {
-      "id": 9,
-      "name": "Iris",
-      "gender": "female"
+      "id": "pok",
+      "name": "Maru",
+      "ip": "female"
     },
     {
-      "id": 10,
-      "name": "Jane",
-      "gender": "female"
+      "id": "mkjs",
+      "name": "Huchu",
+      "ip": "female"
     },
     {
       "id": 11,
-      "name": "Jan",
-      "gender": "female"
+      "name": "Squar",
+      "ip": "female"
     }
   ],
   "links": [
     {
       "source": 1,
-      "target": 2
-    },
-    {
-      "source": 1,
-      "target": 5
-    },
-    {
-      "source": 1,
-      "target": 6
-    },
-
-    {
-      "source": 2,
-      "target": 3
+      "target": "qwe"
     },
     {
       "source": 2,
-      "target": 7
+      "target": "zxc"
     }
   ,
-
     {
-      "source": 3,
-      "target": 4
-    },
-    {
-      "source": 8,
+      "source": "asdf",
       "target": 3
-    }
-  ,
-    {
-      "source": 4,
-      "target": 5
     }
   ,
 
     {
       "source": 4,
-      "target": 9
+      "target": "pok"
     },
     {
       "source": 5,
-      "target": 10
+      "target": "mkjs"
     }
   ]
 }

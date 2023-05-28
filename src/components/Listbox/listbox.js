@@ -37,7 +37,7 @@ export default function ComboBox() {
       <div className='info'>
         <p>{'ID  :    '}{value !== null ? `${value.name}` : ''}</p>
         <>{'E-mail :    '}{value !== null ? `${value.name}` : ''}</>
-        <p>{'IP    :    '}{value !== null ? `${value.gender}` : ''}</p>
+        <p>{'IP    :    '}{value !== null ? `${value.ip}` : ''}</p>
       </div>
     </div>
     </div>

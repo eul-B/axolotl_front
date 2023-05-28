@@ -1,4 +1,5 @@
 import MyCharts from './Heatmap/heatmap';
+import MaxInput from './Heatmap/maxInput';
 import SearchDate from './Heatmap/searchDate';
 import styles from './NModalBasic.module.css';
 
@@ -19,6 +20,7 @@ function ModalBasic({ setModalOpen, id, title, content, writer }) {
             <h1>Image Table</h1>
             {/* <SearchDate/> */}
             <MyCharts/>
+            <MaxInput/>
             {/* <p className={styles.tablebody}>
           {data === 1 ? <p>{Array(1).fill(<Abox/>)}</p> : null}
           {data > 1 && data <= 4? <p>{Array(4).fill(<Bbox/>)}</p> : null}

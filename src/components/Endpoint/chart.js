@@ -19,8 +19,8 @@ import './chart.css'
         if (Array.isArray(response.data)) {
           const modifiedData = response.data.map((item) => item.date);
           const modifiedCpu = response.data.map((item) => item.cpu);
-          const modifiedMem = response.data.map((item) => item.mem);
-          const modifiedNet = response.data.map((item) => item.net);
+          const modifiedMem = response.data.map((item) => item.memory);
+          const modifiedNet = response.data.map((item) => item.network);
           setDate(modifiedData);
           setCpu(modifiedCpu);
           setMem(modifiedMem);
@@ -47,20 +47,20 @@ import './chart.css'
   
    const series = [ //data on the y-axis
       {
-        name: "",
-        data: cpu
+        name: "cpu",
+        data: cpu.reverse()
       },{
-        name: "",
-        data: mem
+        name: "memory",
+        data: mem.reverse()
       },{
-        name: "",
-        data: net
+        name: "network",
+        data: net.reverse()
       }
     ];
 
     const options = {
       xaxis: {
-        categories: date
+        categories: date.reverse()
       },
       dataLabels: {
         enabled: false
@@ -73,10 +73,15 @@ import './chart.css'
         width: 0
       },
       tooltip: {
-        style: {
-          fontSize: '12px',
-          color: '#000000' // 툴팁 글씨 색을 빨간색으로 설정
-        }
+      enabled: true,
+      enabledOnSeries: undefined,
+      shared: true,
+      followCursor: false,
+      intersect: false,
+      inverseOrder: false,
+      custom: undefined,
+      fillSeriesColor: false,
+      theme: false
       },
       marker:{
         foreColor: "#000000"
