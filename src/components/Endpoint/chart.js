@@ -100,7 +100,7 @@ import './chart.css'
           options={options}
           series={series}
           type="area"
-          width="780"
+          width="750"
           height="400"
         />
         <div>
