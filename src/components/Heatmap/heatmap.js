@@ -41,7 +41,7 @@ if (Array.isArray(nameres.data)) {
             const response = await axios.get(`http://localhost:8000/${name}`);
             if (Array.isArray(response.data)) {
               const modifiedData = response.data.map((item) => ({
-                date: item.date,
+                date: item.date.slice(11,20),
                 cpu: item.cpu,
                 mem: item.memory,
                 net: item.network
