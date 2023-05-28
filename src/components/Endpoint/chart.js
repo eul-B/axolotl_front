@@ -17,7 +17,7 @@ import './chart.css'
       try { 
         const response = await axios.get('http://localhost:8000/' + selected.id);
         if (Array.isArray(response.data)) {
-          const modifiedData = response.data.map((item) => item.date);
+          const modifiedData = response.data.map((item) => item.date.slice(10, 20));
           const modifiedCpu = response.data.map((item) => item.cpu);
           const modifiedMem = response.data.map((item) => item.memory);
           const modifiedNet = response.data.map((item) => item.network);
@@ -91,11 +91,7 @@ import './chart.css'
       },
       marker:{
         foreColor: "#000000"
-      },
-      yaxis: {
-        max: 100,
-        min: 0
-      },
+      }
     }
   
     return (
@@ -104,7 +100,7 @@ import './chart.css'
           options={options}
           series={series}
           type="area"
-          width="700"
+          width="780"
           height="400"
         />
         <div>

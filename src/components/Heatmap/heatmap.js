@@ -11,7 +11,7 @@ const MyCharts = () => {
   const [name, setName] = useState([]);
   const [combinedData, setCombinedData] = useState([]);
   
-  const [threshold, setThreshold] = useState(80);
+  const [threshold, setThreshold] = useState(50);
 
   const handleStopFetching = () => {
     setFetchingData(false);
@@ -43,7 +43,7 @@ if (Array.isArray(nameres.data)) {
             const response = await axios.get(`http://localhost:8000/${name}`);
             if (Array.isArray(response.data)) {
               const modifiedData = response.data.map((item) => ({
-                date: item.date.slice(11,20),
+                date: item.date,
                 cpu: item.cpu,
                 mem: item.memory,
                 net: item.network
@@ -91,7 +91,7 @@ if (Array.isArray(nameres.data)) {
 
   const options = {
     chart: { id: 'bar-chart' },
-    xaxis: { categories: data.length > 0 ? data[0].map((item) => item.date).reverse() : [] },
+    xaxis: { categories: data.length > 0 ? data[0].map((item) => item.date.slice(11, 20)).reverse() : [] },
     dataLabels: { enabled: false },
     colors: ["#000000", "#FF0000", "#0000FF"],
     grid: { show: false },
@@ -107,7 +107,7 @@ if (Array.isArray(nameres.data)) {
           colorScale: {
             // ranges:[{
             //     from: threshold,
-            //     to: 100,
+            //     to: undefined,
             //     color: "#000000",
             //     foreColor: "#000000",
             // }],

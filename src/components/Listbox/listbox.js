@@ -15,6 +15,7 @@ export default function ComboBox() {
         {/* <div>{`value: ${value !== null ? `'${value.name}'` : 'null'}`}</div>
         <div>{`inputValue: '${inputValue}'`}</div> */}
     <div>
+    <div className='box'>
       <Autocomplete className='drop'
     value={value}
     onChange={(event, newValue) => {
@@ -29,13 +30,13 @@ export default function ComboBox() {
       id="combo-box"
       getOptionLabel={(user) => user.name}
       options={data.nodes}
-      sx={{ width: 250 }}
+      sx={{ width: 250}}
       renderInput={(params) => <TextField {...params} label="name"/>}
       />
     </div>
-    <div className='box'>
+   
       <div className='info'>
-        <p>{'ID  :    '}{value !== null ? `${value.name}` : ''}</p>
+        {/* <p>{'Name  :    '}{value !== null ? `${value.name}` : ''}</p> */}
         <>{'E-mail :    '}{value !== null ? `${value.name}` : ''}</>
         <p>{'IP    :    '}{value !== null ? `${value.ip}` : ''}</p>
       </div>

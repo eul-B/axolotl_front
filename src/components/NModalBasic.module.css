@@ -6,9 +6,8 @@
   width: 50%;
   margin-top: 3px;
   z-index: 999;
-  
   /*스타일링*/
-  background-color: slategrey;
+  background-color: rgba(112, 128, 144, 0.9);
   padding: 20px;
   border-radius: 10px;
   border: black;
