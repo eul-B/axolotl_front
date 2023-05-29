@@ -6,93 +6,73 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import axios from "axios";
-
 const options = ['Name', 'E-Mail'];
 
-export default function InputValue(){
-     var selected = JSON.parse(localStorage.getItem('value'))
-    let [userName, setUserName] = useState("");
-    let [submitValue, setSubmitValue] = useState("");
-    const [value, setValue] = React.useState(options[0]);
-    const [inputValue, setInputValue] = React.useState('');
+export default function InputValue() {
+  const selected = JSON.parse(localStorage.getItem('value'));
+  const [submitValue, setSubmitValue] = useState("");
+  const [value, setValue] = useState(options[0]);
+  const [inputValue, setInputValue] = useState('');
 
-    const postName = async () =>{
-      axios({
-        method: "post",
-        url: "http://localhost:5000/insert_user",
-        data:{
-          id: `${selected.id}`,
-          name: `${submitValue}`,
-          email:`${selected.email}`
-        },
-        withCredentials: true,
-      }).then((res)=>{
-        console.log(res);
-      });
-    }
+  const postUser = async (name, email) => {
+    axios({
+      method: "post",
+      url: "http://localhost:5000/insert_user",
+      data: {
+        id: selected.id,
+        name: name,
+        email: email
+      },
+      withCredentials: true,
+    }).then((res) => {
+      console.log(res);
+      setSubmitValue(name); // 업데이트된 값으로 상태 업데이트
+    });
+  }
 
-    const postMail = async () =>{
-      axios({
-        method: "post",
-        url: "http://localhost:5000/insert_user",
-        data:{
-          id: `${selected.id}`,
-          name: `${selected.name}`,
-          email:`${submitValue}`
-        },
-        withCredentials: true,
-      }).then((res)=>{
-        console.log(res);
-      });
+  const handleClick = () => {
+    if (value === options[0]) {
+      postUser(inputValue, selected.email);
+    } else {
+      postUser(selected.name, inputValue);
     }
+  }
 
-    const ClickName= (userName)=>{
-      setSubmitValue(userName);
-      postName();
-    }
-
-    const ClickMail = (userName)=>{
-      setSubmitValue(userName);
-      postMail();
-    }
-    
-  
-    return(
-        <div className="inputName">
-            <div className="auto">
-            <Autocomplete 
-        value={value}
-        onChange={(event, newValue) => {
-          setValue(newValue);
-        }}
-        inputValue={inputValue}
-        onInputChange={(event, newInputValue) => {
-          setInputValue(newInputValue);
-        }}
-        id="controllable-states-demo"
-        options={options}
-        sx={{ width: 150 }}
-        renderInput={(params) => <TextField {...params} label="To Edit" />}
-      />
+  return (
+    <div className="inputName">
+      <div className="auto">
+        <Autocomplete
+          value={value}
+          onChange={(event, newValue) => {
+            setValue(newValue);
+          }}
+          inputValue={inputValue}
+          onInputChange={(event, newInputValue) => {
+            setInputValue(newInputValue);
+          }}
+          id="controllable-states-demo"
+          options={options}
+          sx={{ width: 150 }}
+          renderInput={(params) => <TextField {...params} label="To Edit" />}
+        />
       </div>
-            <Box sx={{ '& button': { m: 1 } }}>
-            <form>
-            <TextField
+      <Box sx={{ '& button': { m: 1 } }}>
+        <form>
+          <TextField
             className="text"
-        id="date"
-        label="Enter the Value"
-        type="text"
-        // defaultValue={}
-        onChange={(e) => setUserName(e.target.value)}
-        InputLabelProps={{
-          shrink: true,
-        }}
-      />
-        <Button variant="contained" size="large" onClick={()=>value === options[0]?ClickName(inputValue):ClickMail(inputValue)}>
-          Submit
-        </Button>
+            id="date"
+            label="Enter the Value"
+            type="text"
+            onChange={(e) => setInputValue(e.target.value)}
+            InputLabelProps={{
+              shrink: true,
+            }}
+          />
+          <Button variant="contained" size="large" onClick={handleClick}>
+            Submit
+          </Button>
         </form>
-        </Box>
-        </div>
-    );
+      </Box>
+    </div>
+  );
 }
