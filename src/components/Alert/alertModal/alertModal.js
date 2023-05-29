@@ -2,11 +2,9 @@ import { useState } from "react";
 import styles from './alertModal.module.css';
 import AlertModalBasic from './alertModalBasic';
 
-function AlertModal() {
-  // 모달창 노출 여부 state
+function AlertModal({ messages }) {
   const [modalOpen, setAlertModalOpen] = useState(false);
 
-  // 모달창 노출
   const showAlertModal = () => {
     setAlertModalOpen(true);
   };
@@ -14,7 +12,8 @@ function AlertModal() {
   return (
     <div>
       <button className={styles.openalertmodal} onClick={showAlertModal}>open</button>
-      {modalOpen && <AlertModalBasic setAlertModalOpen={setAlertModalOpen} />}
+      {modalOpen && <AlertModalBasic setAlertModalOpen={setAlertModalOpen} alertMessages={messages} />}
+      {messages}
     </div>
   );
 }

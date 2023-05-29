@@ -21,7 +21,7 @@ function ModalBasic({ setModalOpen, id, title, content, writer }) {
             <h1>Image Table</h1>
             <MyCharts/>
             <MaxInput/>
-            <AlertModal/>
+            
         </div>
     );
 }

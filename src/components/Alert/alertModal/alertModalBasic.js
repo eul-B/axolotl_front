@@ -2,8 +2,7 @@ import styles from './alertModalBasic.module.css';
 import React from "react";
 import Chat from '../Alert';
 
-function AlertModalBasic({ setAlertModalOpen }) {
-  // 모달 끄기 
+function AlertModalBasic({ setAlertModalOpen, alertMessages }) {
   const closeModal = () => {
     setAlertModalOpen(false);
   };
@@ -14,7 +13,7 @@ function AlertModalBasic({ setAlertModalOpen }) {
         X
       </button>
       <p>
-        <Chat/>
+        <Chat alertMessages={alertMessages} />
       </p>
     </div>
   );
