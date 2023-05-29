@@ -9,27 +9,68 @@ import './searchDate.css'
 import ArrowBackIosRoundedIcon from '@mui/icons-material/ArrowBackIosRounded';
 import ArrowForwardIosRoundedIcon from '@mui/icons-material/ArrowForwardIosRounded';
 
-function SearchDates({ onStopFetching }) { // onStopFetching을 비구조화 할당으로 받음
+function SearchDates({ onStopFetching, setData }) {
   const dateNow = new Date();
   const today = dateNow.toISOString().slice(0, 10);
   const [startDate, setStartDate] = useState(today);
   const [startTime, setStartTime] = useState(today);
   const [start, setStart] = useState(today);
+  const [responseData, setResponseData] = useState('');
+
+
+  const postData = () => {
+    const url = 'http://localhost:5000/get_perform';
+    const requestOptions = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        date: start
+      })
+    };
+
+    fetch(url, requestOptions)
+      .then(response => response.json())
+      .then(data => {
+        // 요청에 대한 응답 처리
+        setResponseData(data);
+        alert(JSON.stringify(data));
+
+        const newData = data.map((item) => ({
+          date: item.date,
+          cpu: item.cpu,
+          mem: item.memory,
+          net_in: item.net_in,
+          net_out: item.net_out
+        }));
+        setData(newData);
+      })
+      .catch(error => {
+        // 오류 처리
+        console.error(error);
+      });
+  };
+
   
   const handleClick = () => {
+    postData()
     onStopFetching(); // 검색 버튼 클릭 시 onStopFetching 호출
     const searchDateTime = moment(`${startDate} ${startTime}`).format('YYYY-MM-DD HH:mm:ss');
     setStart(searchDateTime);
   }
   const handleClickBack = () => {
+    postData()
     onStopFetching(); // 검색 버튼 클릭 시 onStopFetching 호출
     setStart(moment(start).subtract(1, 'minute').format('YYYY-MM-DD HH:mm:ss'))
   }
   
   const handleClickLater = () => {
+    postData()
     onStopFetching(); // 검색 버튼 클릭 시 onStopFetching 호출
     setStart(moment(start).add(1, 'minute').format('YYYY-MM-DD HH:mm:ss'))
   }
+  
 
   return (
     <div>

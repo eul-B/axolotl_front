@@ -48,27 +48,26 @@ import './chart.css'
     }, 1000);
 
     return () => clearInterval(interval);
-  }, []); 
-  
+  }, []);
    const series = [ //data on the y-axis
       {
         name: "cpu",
-        data: cpu.reverse()
+        data: [...cpu].reverse()
       },{
         name: "memory",
-        data: mem.reverse()
+        data: [...mem].reverse()
       },{
         name: "network_in",
-        data: net.reverse()
+        data: [...net].reverse()
       },{
         name: "network_out",
-        data: netout.reverse()
+        data: [...netout].reverse()
       }
     ];
 
     const options = {
       xaxis: {
-        categories: date.reverse()
+        categories: [...date].reverse()
       },
       dataLabels: {
         enabled: false

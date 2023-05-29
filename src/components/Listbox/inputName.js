@@ -13,7 +13,11 @@ export default function InputValue() {
   const [submitValue, setSubmitValue] = useState("");
   const [value, setValue] = useState(options[0]);
   const [inputValue, setInputValue] = useState('');
+  const [inputName, setInputName] = useState('');
 
+
+
+  
   const postUser = async (name, email) => {
     axios({
       method: "post",
@@ -30,11 +34,43 @@ export default function InputValue() {
     });
   }
 
+
+  const [data, setData] = useState('');
+
+  const postData = (name, email) => {
+    const url = 'http://localhost:5000/insert_user';
+    const requestOptions = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        id: selected.id,
+        name: name,
+        email: email
+      })
+    };
+
+    fetch(url, requestOptions)
+      .then(response => response.json())
+      .then(data => {
+        // 요청에 대한 응답 처리
+        setData(data);
+      })
+      .catch(error => {
+        // 오류 처리
+        console.error(error);
+      });
+  };
+
+
+
+
   const handleClick = () => {
     if (value === options[0]) {
-      postUser(inputValue, selected.email);
+      postData(inputName, selected.email);
     } else {
-      postUser(selected.name, inputValue);
+      postData(selected.name, inputName);
     }
   }
 
@@ -63,7 +99,7 @@ export default function InputValue() {
             id="date"
             label="Enter the Value"
             type="text"
-            onChange={(e) => setInputValue(e.target.value)}
+            onChange={(e) => setInputName(e.target.value)}
             InputLabelProps={{
               shrink: true,
             }}
