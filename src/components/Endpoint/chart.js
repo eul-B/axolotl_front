@@ -68,7 +68,7 @@ import './chart.css'
 
     const options = {
       xaxis: {
-        categories: date
+        categories: date.reverse()
       },
       dataLabels: {
         enabled: false
