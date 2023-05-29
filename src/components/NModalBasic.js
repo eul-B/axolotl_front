@@ -1,7 +1,5 @@
-import AlertModal from './Alert/alertModal/alertModal';
+
 import MyCharts from './Heatmap/heatmap';
-import MaxInput from './Heatmap/maxInput';
-import SearchDate from './Heatmap/searchDate';
 import styles from './NModalBasic.module.css';
 
 var data;
@@ -18,9 +16,8 @@ function ModalBasic({ setModalOpen, id, title, content, writer }) {
             <button className={styles.close} onClick={closeModal}>
                 X
             </button>
-            <h1>Image Table</h1>
+            <h1>Heat map</h1>
             <MyCharts/>
-            <MaxInput/>
             
         </div>
     );

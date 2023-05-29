@@ -58,7 +58,7 @@ import './chart.css'
         name: "memory",
         data: mem.reverse()
       },{
-        name: "network",
+        name: "network_in",
         data: net.reverse()
       },{
         name: "network_out",

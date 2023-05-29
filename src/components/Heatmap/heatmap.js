@@ -3,7 +3,6 @@ import Chart from "react-apexcharts";
 import axios from 'axios';
 import SearchDates from './searchDate';
 import RealTime from './backToRealTime';
-import AlertModal from '../Alert/alertModal/alertModal';
 
 const MyCharts = () => {
   const [data, setData] = useState([]);
@@ -11,9 +10,7 @@ const MyCharts = () => {
   const [nodeNames, setNodeNames] = useState([]);
   const [name, setName] = useState([]);
   const [combinedData, setCombinedData] = useState([]);
-  const [threshold, setThreshold] = useState(80);
   const [alertMessages, setAlertMessages] = useState([]);
-  const [nameforalert, setNameforAlert] = useState([]);
 
   const handleStopFetching = () => {
     setFetchingData(false);
@@ -43,6 +40,10 @@ const MyCharts = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        const cpuHigh = localStorage.getItem('CPU');
+        const memoryHigh = localStorage.getItem('Memory');
+        const netinHigh = localStorage.getItem('Network_in');
+        const netoutHigh = localStorage.getItem('Network_out');
         const nameres = await axios.get('http://localhost:7000/nodes');
         if (Array.isArray(nameres.data)) {
           const modified = nameres.data.map((item) => item.id);
@@ -70,16 +71,16 @@ const MyCharts = () => {
               }));
 
               modifiedData.forEach((item) => {
-                if (item.cpu > threshold) {
+                if (item.cpu > cpuHigh) {
                   handleThresholdAlert(data.name, 'CPU', item.date);
                 }
-                if (item.mem > threshold) {
+                if (item.mem > memoryHigh) {
                   handleThresholdAlert(data.name, 'Memory', item.date);
                 }
-                if (item.net_in > threshold) {
+                if (item.net_in > netinHigh) {
                   handleThresholdAlert(data.name, 'Network Inbound', item.date);
                 }
-                if (item.net_out > threshold) {
+                if (item.net_out > netoutHigh) {
                   handleThresholdAlert(data.name, 'Network Outbound', item.date);
                 }
               });
@@ -151,9 +152,8 @@ const MyCharts = () => {
         series={series}
         type="heatmap"
         width="850"
-        height="450"
+        height="580"
       />
-       <AlertModal messages={alertMessages} />
     </div>
   );
 };
