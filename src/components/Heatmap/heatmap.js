@@ -11,7 +11,7 @@ const MyCharts = () => {
   const [name, setName] = useState([]);
   const [combinedData, setCombinedData] = useState([]);
   
-  const [threshold, setThreshold] = useState(50);
+  const [threshold, setThreshold] = useState(80);
 
   const handleStopFetching = () => {
     setFetchingData(false);
@@ -46,7 +46,8 @@ if (Array.isArray(nameres.data)) {
                 date: item.date,
                 cpu: item.cpu,
                 mem: item.memory,
-                net: item.network
+                net_in: item.net_in,
+                net_out: item.net_out
               }));
               return modifiedData;
             } else {
@@ -68,13 +69,9 @@ if (Array.isArray(nameres.data)) {
     }
   }, [fetchingData, nodeNames]);
 
- 
-
   const handleThresholdAlert = (nodeName, dataType) => {
     // alert(`The ${dataType} value of ${nodeName} has exceeded the threshold.`);
   };
-
-
 
   const series = data.flatMap((nodeData, nodeIndex) => {
     const nodeName = combinedData[nodeIndex].name;
@@ -82,41 +79,39 @@ if (Array.isArray(nameres.data)) {
     return [
       { name: `CPU (${nodeName})`, data: nodeData.map((item) => item.cpu).reverse() },
       { name: `Memory (${nodeName})`, data: nodeData.map((item) => item.mem).reverse() },
-      { name: `Network (${nodeName})`, data: nodeData.map((item) => item.net).reverse() }
+      { name: `Network Inbound (${nodeName})`, data: nodeData.map((item) => item.net_in).reverse() },
+      { name: `Network Outbound (${nodeName})`, data: nodeData.map((item) => item.net_out).reverse() },
     ];
   });
 
-
   
+const options = {
+  chart: { id: 'bar-chart' },
+  xaxis: { categories: data.length > 0 ? data[0].map((item) => item.date.slice(11, 20)).reverse() : [] },
+  dataLabels: { enabled: false },
+  colors: ["#000000", "#FF0000", "#00FF00", "#0000FF"],
+  grid: { show: false },
+  stroke: { width: 0 },
+  tooltip: {
+    enabled: true,
+    followCursor: true
+  },
+  yaxis: { show: false },
+  plotOptions: {
+    heatmap: {
+      radius: 2,
+      shadeIntensity: 0.5,
+      distributed: false,
+      useFillColorAsStroke: false,
+      colorScale: {
+        inverse: false,
+        min: 0,
+        max: 100
+      },
+    },
+  }
+};
 
-  const options = {
-    chart: { id: 'bar-chart' },
-    xaxis: { categories: data.length > 0 ? data[0].map((item) => item.date.slice(11, 20)).reverse() : [] },
-    dataLabels: { enabled: false },
-    colors: ["#000000", "#FF0000", "#0000FF"],
-    grid: { show: false },
-    stroke: { width: 0 },
-    
-    yaxis: { show: false },
-    plotOptions: {
-      heatmap: {
-          radius: 2,
-        enableShades: true,
-          distributed: false,
-          useFillColorAsStroke: false,
-          colorScale: {
-            // ranges:[{
-            //     from: threshold,
-            //     to: undefined,
-            //     color: "#000000",
-            //     foreColor: "#000000",
-            // }],
-            min: 0,
-            max: 100
-          },
-        }
-      }
-    };
 
   return (
     <div>

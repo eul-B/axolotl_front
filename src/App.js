@@ -9,9 +9,6 @@ import { useEffect, useState } from 'react';
 import Chart from "react-apexcharts";
 import axios from 'axios';
 
-
-
-
 function App() {
 
   const [node, setNode] = useState([]);

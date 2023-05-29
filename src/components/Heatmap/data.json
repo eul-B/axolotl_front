@@ -3,17 +3,20 @@
     {
       "cpu" : 90,
       "memory" : 30,
-      "network" : 12,
+      "net_in" : 12,
+      "net_out": 30,
       "date": "2023-03-01 10:07:01"
     },{
       "cpu" : 12,
       "memory" : 80,
-      "network" : 2,
+      "net_in" : 2,
+      "net_out": 30,
       "date": "2023-03-01 10:07:02"
     },{
       "cpu" : 22,
       "memory" : 10,
-      "network" : 32,
+      "net_in" : 32,
+      "net_out": 30,
       "date": "2023-03-01 10:07:03"
     }
   ],
@@ -21,17 +24,20 @@
     {
       "cpu" : 20,
       "memory" : 10,
-      "network" : 2,
+      "net_in" : 2,
+      "net_out": 30,
       "date": "2023-03-01 10:07:01"
     },{
       "cpu" : 32,
       "memory" : 10,
-      "network" : 22,
+      "net_in" : 22,
+      "net_out": 30,
       "date": "2023-03-01 10:07:02"
     },{
       "cpu" : 12,
       "memory" : 30,
-      "network" : 2,
+      "net_in" : 2,
+      "net_out": 30,
       "date": "2023-03-01 10:07:03"
     }
   ],
@@ -39,17 +45,20 @@
     {
       "cpu" : 20,
       "memory" : 10,
-      "network" : 2,
+      "net_in" : 2,
+      "net_out": 30,
       "date": "2023-03-01 10:07:01"
     },{
       "cpu" : 32,
       "memory" : 10,
-      "network" : 22,
+      "net_in" : 22,
+      "net_out": 30,
       "date": "2023-03-01 10:07:02"
     },{
       "cpu" : 12,
       "memory" : 30,
-      "network" : 2,
+      "net_in" : 2,
+      "net_out": 30,
       "date": "2023-03-01 10:07:03"
     }
   ],
@@ -57,35 +66,41 @@
     {
       "cpu" : 20,
       "memory" : 10,
-      "network" : 2,
+      "net_in" : 2,
+      "net_out": 30,
       "date": "2023-03-01 10:07:01"
     },{
       "cpu" : 32,
       "memory" : 10,
-      "network" : 22,
+      "net_in" : 22,
+      "net_out": 30,
       "date": "2023-03-01 10:07:02"
     },{
       "cpu" : 12,
       "memory" : 30,
-      "network" : 2,
+      "net_in" : 2,
+      "net_out": 30,
       "date": "2023-03-01 10:07:03"
     }
   ],
   "5":[
     {
-      "cpu" : 20,
+      "cpu" : 90,
       "memory" : 10,
-      "network" : 2,
+      "net_in" : 2,
+      "net_out": 30,
       "date": "2023-03-01 10:07:01"
     },{
       "cpu" : 32,
       "memory" : 10,
-      "network" : 22,
+      "net_in" : 22,
+      "net_out": 30,
       "date": "2023-03-01 10:07:02"
     },{
       "cpu" : 12,
       "memory" : 30,
-      "network" : 2,
+      "net_in" : 2,
+      "net_out": 30,
       "date": "2023-03-01 10:07:03"
     }
   ],
@@ -93,17 +108,20 @@
     {
       "cpu" : 20,
       "memory" : 10,
-      "network" : 2,
+      "net_in" : 2,
+      "net_out": 30,
       "date": "2023-03-01 10:07:01"
     },{
       "cpu" : 32,
       "memory" : 10,
-      "network" : 22,
+      "net_in" : 22,
+      "net_out": 30,
       "date": "2023-03-01 10:07:02"
     },{
       "cpu" : 12,
       "memory" : 30,
-      "network" : 2,
+      "net_in" : 2,
+      "net_out": 30,
       "date": "2023-03-01 10:07:03"
     }
   ],
@@ -111,17 +129,20 @@
     {
       "cpu" : 20,
       "memory" : 10,
-      "network" : 2,
+      "net_in" : 2,
+      "net_out": 30,
       "date": "2023-03-01 10:07:01"
     },{
       "cpu" : 32,
       "memory" : 10,
-      "network" : 22,
+      "net_in" : 22,
+      "net_out": 30,
       "date": "2023-03-01 10:07:02"
     },{
       "cpu" : 12,
       "memory" : 30,
-      "network" : 2,
+      "net_in" : 2,
+      "net_out": 30,
       "date": "2023-03-01 10:07:03"
     }
   ],
@@ -129,17 +150,20 @@
     {
       "cpu" : 20,
       "memory" : 10,
-      "network" : 2,
+      "net_in" : 2,
+      "net_out": 30,
       "date": "2023-03-01 10:07:01"
     },{
       "cpu" : 32,
       "memory" : 10,
-      "network" : 22,
+      "net_in" : 22,
+      "net_out": 30,
       "date": "2023-03-01 10:07:02"
     },{
       "cpu" : 12,
       "memory" : 30,
-      "network" : 2,
+      "net_in" : 2,
+      "net_out": 30,
       "date": "2023-03-01 10:07:03"
     }
   ],
@@ -147,17 +171,20 @@
     {
       "cpu" : 20,
       "memory" : 10,
-      "network" : 2,
+      "net_in" : 2,
+      "net_out": 30,
       "date": "2023-03-01 10:07:01"
     },{
       "cpu" : 32,
       "memory" : 10,
-      "network" : 22,
+      "net_in" : 22,
+      "net_out": 30,
       "date": "2023-03-01 10:07:02"
     },{
       "cpu" : 12,
       "memory" : 30,
-      "network" : 2,
+      "net_in" : 2,
+      "net_out": 30,
       "date": "2023-03-01 10:07:03"
     }
   ],
@@ -165,34 +192,40 @@
     {
       "cpu" : 20,
       "memory" : 10,
-      "network" : 2,
+      "net_in" : 2,
+      "net_out": 30,
       "date": "2023-03-01 10:07:01"
     },{
       "cpu" : 32,
       "memory" : 10,
-      "network" : 22,
+      "net_in" : 22,
+      "net_out": 30,
       "date": "2023-03-01 10:07:02"
     },{
       "cpu" : 12,
       "memory" : 30,
-      "network" : 2,
+      "net_in" : 2,
+      "net_out": 30,
       "date": "2023-03-01 10:07:03"
     }
   ],"11":[
     {
       "cpu" : 10,
       "memory" : 14,
-      "network" : 6,
+      "net_in" : 6,
+      "net_out": 30,
       "date": "2023-03-01 10:07:01"
     },{
       "cpu" : 12,
       "memory" : 20,
-      "network" : 2,
+      "net_in" : 2,
+      "net_out": 30,
       "date": "2023-03-01 10:07:02"
     },{
       "cpu" : 32,
       "memory" : 10,
-      "network" : 22,
+      "net_in" : 22,
+      "net_out": 30,
       "date": "2023-03-01 10:07:03"
     }
   ]

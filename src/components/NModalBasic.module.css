@@ -5,7 +5,7 @@
   right: 0;
   width: 50%;
   margin-top: 3px;
-  z-index: 999;
+  z-index: 100;
   /*스타일링*/
   background-color: rgba(112, 128, 144, 0.9);
   padding: 20px;

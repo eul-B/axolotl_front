@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import './inputName.css'
 import ControllableStates from "./IDorEMAIL";
-import { Button } from "@mui/material";
+import { Button, appBarClasses } from "@mui/material";
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
@@ -25,6 +25,7 @@ export default function InputValue(){
           name: `${submitValue}`,
           email:`${selected.email}`
         },
+        withCredentials: true,
       }).then((res)=>{
         console.log(res);
       });
@@ -39,6 +40,7 @@ export default function InputValue(){
           name: `${selected.name}`,
           email:`${submitValue}`
         },
+        withCredentials: true,
       }).then((res)=>{
         console.log(res);
       });
@@ -53,6 +55,7 @@ export default function InputValue(){
       setSubmitValue(userName);
       postMail();
     }
+    
   
     return(
         <div className="inputName">
@@ -72,7 +75,6 @@ export default function InputValue(){
         renderInput={(params) => <TextField {...params} label="To Edit" />}
       />
       </div>
-            {/* <ControllableStates/> */}
             <Box sx={{ '& button': { m: 1 } }}>
             <form>
             <TextField
@@ -82,7 +84,6 @@ export default function InputValue(){
         type="text"
         // defaultValue={}
         onChange={(e) => setUserName(e.target.value)}
-        // inputProps={{ max: today }}
         InputLabelProps={{
           shrink: true,
         }}
