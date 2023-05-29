@@ -8,7 +8,8 @@ import './chart.css'
     const [date, setDate] = useState([]);
     const [mem, setMem] = useState([]);
     const[net, setNet] = useState([]);
-    const [local, setLocal] = useState([localStorage.getItem('value')]);
+    const[netout, setNetOut] = useState([]);
+    
     
     
   useEffect(() => {
@@ -20,16 +21,20 @@ import './chart.css'
           const modifiedData = response.data.map((item) => item.date.slice(10, 20));
           const modifiedCpu = response.data.map((item) => item.cpu);
           const modifiedMem = response.data.map((item) => item.memory);
-          const modifiedNet = response.data.map((item) => item.network);
+          const modifiedNet = response.data.map((item) => item.net_in);
+          const modifiedNetout = response.data.map((item) => item.net_out);
           setDate(modifiedData);
           setCpu(modifiedCpu);
           setMem(modifiedMem);
           setNet(modifiedNet);
+          setNetOut(modifiedNetout);
+
         } else {
           setDate([]);
           setCpu([]);
           setMem([]);
           setNet([]);
+          setNetOut([]);
         }
       } catch (error) {
         console.error(error);
@@ -55,6 +60,9 @@ import './chart.css'
       },{
         name: "network",
         data: net.reverse()
+      },{
+        name: "network_out",
+        data: netout.reverse()
       }
     ];
 
@@ -71,7 +79,7 @@ import './chart.css'
         }
         
       },
-      colors: ["#000000", "#FF0000", "#0000FF"],
+      colors: ["#000000", "#FF0000","#00FF00", "#0000FF"],
       grid: {
         show: false
       },
