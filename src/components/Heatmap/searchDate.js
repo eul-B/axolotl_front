@@ -13,9 +13,11 @@ import data from './prev.json';
 function SearchDates({ onStopFetching, setData, setCombinedData }) {
   const dateNow = new Date();
   const today = dateNow.toISOString().slice(0, 10);
+
+  const [finish, setFinish] = useState(today);
+  const [start, setStart] = useState(today);
   const [startDate, setStartDate] = useState(today);
   const [startTime, setStartTime] = useState(today);
-  const [start, setStart] = useState(today);
 
   const postData = async () => {
     const url = 'http://localhost:5000/get_perform';
@@ -24,24 +26,30 @@ function SearchDates({ onStopFetching, setData, setCombinedData }) {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({
-        date: start
-      })
+      data: {
+        s_date: start,
+        f_date: finish
+      }
     };
-
+  
     try {
+      const response = await axios.post(url, requestOptions.data, {
+        headers: requestOptions.headers
+      });
+      return response.data; // returned data will be stored in useEffect's response variable
     } catch (error) {
       console.error(error);
     }
   };
 
-  const dataSetting = async () => {
+  const dataSetting = async (data) => {
     try {
       const modifiedDataList = await Promise.all(
-        name.map(async (item) => { 
-          const response =  data[item.id];
+        name.map(async (nameData) => {
+          const response =  data[nameData.id];
           if (Array.isArray(response)) {
             const modifiedData = response.map((item) => ({
+              name: nameData.name,
               date: item.date,
               cpu: item.cpu,
               mem: item.memory,
@@ -50,51 +58,49 @@ function SearchDates({ onStopFetching, setData, setCombinedData }) {
             }));
             return modifiedData;
           } else {
-            return [];
-          }
+              return null; 
+         }
         })
       );
-    
-      return modifiedDataList;
 
+      const filteredDataList = modifiedDataList.filter((data) => data !== null);
+      return filteredDataList;
     } catch (error) {
       console.error(error);
     }
   };
 
-  const handleClick = async () => {
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await postData();
+      const modifiedDataList = await dataSetting(response);
+      setData(modifiedDataList);
+    };
+
+    fetchData();
+  }, [start, finish]);
+
+  const handleClick = () => {
     const searchDateTime = moment(`${startDate} ${startTime}`).format('YYYY-MM-DD HH:mm:ss');
     setStart(searchDateTime);
-  
-    await postData();
+    setFinish(moment(searchDateTime).subtract(1, 'minute').format('YYYY-MM-DD HH:mm:ss'));
     onStopFetching();
-  
-    const modifiedDataList = await dataSetting();
-    setData(modifiedDataList);
-    setCombinedData(name);
   };
 
-  const handleClickBack = async () => {
-    setStart(moment(start).subtract(1, 'minute').format('YYYY-MM-DD HH:mm:ss'));
-  
-    await postData();
+  const handleClickBack = () => {
+    const previousMinute = moment(start).subtract(1, 'minute').format('YYYY-MM-DD HH:mm:ss');
+    setStart(previousMinute);
+    setFinish(moment(previousMinute).subtract(1, 'minute').format('YYYY-MM-DD HH:mm:ss'));
     onStopFetching();
-  
-    const modifiedDataList = await dataSetting();
-    setData(modifiedDataList);
-    setCombinedData(name);
   };
-  
-  const handleClickLater = async () => {
-    setStart(moment(start).add(1, 'minute').format('YYYY-MM-DD HH:mm:ss'));
-  
-    await postData();
+
+  const handleClickLater = () => {
+    const nextMinute = moment(start).add(1, 'minute').format('YYYY-MM-DD HH:mm:ss');
+    setStart(nextMinute);
+    setFinish(moment(nextMinute).subtract(1, 'minute').format('YYYY-MM-DD HH:mm:ss'));
     onStopFetching();
-  
-    const modifiedDataList = await dataSetting();
-    setData(modifiedDataList);
-    setCombinedData(name);
   };
+
 
   return (
     <div>
