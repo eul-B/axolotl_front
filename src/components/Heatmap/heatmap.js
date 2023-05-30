@@ -3,7 +3,7 @@ import Chart from "react-apexcharts";
 import axios from 'axios';
 import SearchDates from './searchDate';
 import RealTime from './backToRealTime';
-import AlertModal from '../Alert/alertModal/alertModal';
+
 
 const MyCharts = () => {
   const [data, setData] = useState([]);
@@ -38,10 +38,11 @@ const MyCharts = () => {
         }
 
         const newData = await Promise.all(
-          nodeNames.map(async (name) => {
-            const response = await axios.get(`http://localhost:8000/${name}`);
+          combinedData.map(async (name) => {
+            const response = await axios.get(`http://localhost:8000/${name.id}`);
             if (Array.isArray(response.data)) {
               const modifiedData = response.data.map((item) => ({
+                name: name.name,
                 date: item.date,
                 cpu: item.cpu,
                 mem: item.memory,
@@ -68,15 +69,15 @@ const MyCharts = () => {
     }
   }, [fetchingData, nodeNames]);
 
-  const series = data.flatMap((nodeData, nodeIndex) => {
-    const nodeName = combinedData[nodeIndex].name;
-  
+  const series = data.flatMap((nodeData) => {
+    
     return [
-      { name: `CPU (${nodeName})`, data: nodeData.map((item) => item.cpu).reverse() },
-      { name: `Memory (${nodeName})`, data: nodeData.map((item) => item.mem).reverse() },
-      { name: `Network Inbound (${nodeName})`, data: nodeData.map((item) => item.net_in).reverse() },
-      { name: `Network Outbound (${nodeName})`, data: nodeData.map((item) => item.net_out).reverse() },
+      { name: `CPU (${nodeData.name})`, data: nodeData.map((item) => item.cpu).reverse() },
+      { name: `Memory (${nodeData.name})`, data: nodeData.map((item) => item.mem).reverse() },
+      { name: `Network Inbound (${nodeData.name})`, data: nodeData.map((item) => item.net_in).reverse() },
+      { name: `Network Outbound (${nodeData.name})`, data: nodeData.map((item) => item.net_out).reverse() },
     ];
+  
   });
 
   const options = {
@@ -108,6 +109,7 @@ const MyCharts = () => {
 
   return (
     <div>
+      {/* <>{alert(JSON.stringify(data))}</> */}
       <SearchDates onStopFetching={handleStopFetching} setData={setData} setCombinedData ={setCombinedData} />
       <RealTime onStartFetching={handleStartFetching} />
       <Chart

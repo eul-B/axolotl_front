@@ -1,232 +1,274 @@
 {
-  "1":[
-    {
-      "cpu" : 90,
-      "memory" : 30,
-      "net_in" : 12,
-      "net_out": 30,
-      "date": "2023-03-01 10:07:01"
-    },{
-      "cpu" : 12,
-      "memory" : 80,
-      "net_in" : 2,
-      "net_out": 30,
-      "date": "2023-03-01 10:07:02"
-    },{
-      "cpu" : 22,
-      "memory" : 10,
-      "net_in" : 32,
-      "net_out": 30,
-      "date": "2023-03-01 10:07:03"
-    }
-  ],
-  "2":[
-    {
-      "cpu" : 20,
-      "memory" : 10,
-      "net_in" : 2,
-      "net_out": 30,
-      "date": "2023-03-01 10:07:01"
-    },{
-      "cpu" : 32,
-      "memory" : 10,
-      "net_in" : 22,
-      "net_out": 30,
-      "date": "2023-03-01 10:07:02"
-    },{
-      "cpu" : 12,
-      "memory" : 30,
-      "net_in" : 2,
-      "net_out": 30,
-      "date": "2023-03-01 10:07:03"
-    }
-  ],
-  "3":[
-    {
-      "cpu" : 20,
-      "memory" : 10,
-      "net_in" : 2,
-      "net_out": 30,
-      "date": "2023-03-01 10:07:01"
-    },{
-      "cpu" : 32,
-      "memory" : 10,
-      "net_in" : 22,
-      "net_out": 30,
-      "date": "2023-03-01 10:07:02"
-    },{
-      "cpu" : 12,
-      "memory" : 30,
-      "net_in" : 2,
-      "net_out": 30,
-      "date": "2023-03-01 10:07:03"
-    }
-  ],
-  "4":[
-    {
-      "cpu" : 20,
-      "memory" : 10,
-      "net_in" : 2,
-      "net_out": 30,
-      "date": "2023-03-01 10:07:01"
-    },{
-      "cpu" : 32,
-      "memory" : 10,
-      "net_in" : 22,
-      "net_out": 30,
-      "date": "2023-03-01 10:07:02"
-    },{
-      "cpu" : 12,
-      "memory" : 30,
-      "net_in" : 2,
-      "net_out": 30,
-      "date": "2023-03-01 10:07:03"
-    }
-  ],
-  "5":[
-    {
-      "cpu" : 90,
-      "memory" : 10,
-      "net_in" : 2,
-      "net_out": 30,
-      "date": "2023-03-01 10:07:01"
-    },{
-      "cpu" : 32,
-      "memory" : 10,
-      "net_in" : 22,
-      "net_out": 30,
-      "date": "2023-03-01 10:07:02"
-    },{
-      "cpu" : 12,
-      "memory" : 30,
-      "net_in" : 2,
-      "net_out": 30,
-      "date": "2023-03-01 10:07:03"
-    }
-  ],
-  "qwe":[
-    {
-      "cpu" : 20,
-      "memory" : 10,
-      "net_in" : 2,
-      "net_out": 30,
-      "date": "2023-03-01 10:07:01"
-    },{
-      "cpu" : 32,
-      "memory" : 10,
-      "net_in" : 22,
-      "net_out": 30,
-      "date": "2023-03-01 10:07:02"
-    },{
-      "cpu" : 12,
-      "memory" : 30,
-      "net_in" : 2,
-      "net_out": 30,
-      "date": "2023-03-01 10:07:03"
-    }
-  ],
-  "zxc":[
-    {
-      "cpu" : 20,
-      "memory" : 10,
-      "net_in" : 2,
-      "net_out": 30,
-      "date": "2023-03-01 10:07:01"
-    },{
-      "cpu" : 32,
-      "memory" : 10,
-      "net_in" : 22,
-      "net_out": 30,
-      "date": "2023-03-01 10:07:02"
-    },{
-      "cpu" : 12,
-      "memory" : 30,
-      "net_in" : 2,
-      "net_out": 30,
-      "date": "2023-03-01 10:07:03"
-    }
-  ],
-  "asdf":[
-    {
-      "cpu" : 20,
-      "memory" : 10,
-      "net_in" : 2,
-      "net_out": 30,
-      "date": "2023-03-01 10:07:01"
-    },{
-      "cpu" : 32,
-      "memory" : 10,
-      "net_in" : 22,
-      "net_out": 30,
-      "date": "2023-03-01 10:07:02"
-    },{
-      "cpu" : 12,
-      "memory" : 30,
-      "net_in" : 2,
-      "net_out": 30,
-      "date": "2023-03-01 10:07:03"
-    }
-  ],
-  "pok":[
-    {
-      "cpu" : 20,
-      "memory" : 10,
-      "net_in" : 2,
-      "net_out": 30,
-      "date": "2023-03-01 10:07:01"
-    },{
-      "cpu" : 32,
-      "memory" : 10,
-      "net_in" : 22,
-      "net_out": 30,
-      "date": "2023-03-01 10:07:02"
-    },{
-      "cpu" : 12,
-      "memory" : 30,
-      "net_in" : 2,
-      "net_out": 30,
-      "date": "2023-03-01 10:07:03"
-    }
-  ],
-  "mkjs":[
-    {
-      "cpu" : 20,
-      "memory" : 10,
-      "net_in" : 2,
-      "net_out": 30,
-      "date": "2023-03-01 10:07:01"
-    },{
-      "cpu" : 32,
-      "memory" : 10,
-      "net_in" : 22,
-      "net_out": 30,
-      "date": "2023-03-01 10:07:02"
-    },{
-      "cpu" : 12,
-      "memory" : 30,
-      "net_in" : 2,
-      "net_out": 30,
-      "date": "2023-03-01 10:07:03"
-    }
-  ],"11":[
-    {
-      "cpu" : 10,
-      "memory" : 14,
-      "net_in" : 6,
-      "net_out": 30,
-      "date": "2023-03-01 10:07:01"
-    },{
-      "cpu" : 12,
-      "memory" : 20,
-      "net_in" : 2,
-      "net_out": 30,
-      "date": "2023-03-01 10:07:02"
-    },{
-      "cpu" : 32,
-      "memory" : 10,
-      "net_in" : 22,
-      "net_out": 30,
-      "date": "2023-03-01 10:07:03"
-    }
-  ]
+	"11": [
+		{
+			"date": "2023-05-30 23:15:13",
+			"cpu": 1.95,
+			"memory": 29.4,
+			"disk_io": 0,
+			"net_in": 0,
+			"net_out": 0,
+			"vfs_io": 0
+		},
+		{
+			"date": "2023-05-30 23:15:13",
+			"cpu": 1.98,
+			"memory": 29.4,
+			"disk_io": 0,
+			"net_in": 0,
+			"net_out": 0,
+			"vfs_io": 0
+		},
+		{
+			"date": "2023-05-30 23:15:12",
+			"cpu": 2.33,
+			"memory": 29.4,
+			"disk_io": 0,
+			"net_in": 0,
+			"net_out": 0,
+			"vfs_io": 0
+		},
+		{
+			"date": "2023-05-30 23:15:12",
+			"cpu": 2.36,
+			"memory": 29.4,
+			"disk_io": 0,
+			"net_in": 0,
+			"net_out": 0,
+			"vfs_io": 0
+		},
+		{
+			"date": "2023-05-30 23:15:11",
+			"cpu": 1.99,
+			"memory": 29.4,
+			"disk_io": 0,
+			"net_in": 0,
+			"net_out": 0,
+			"vfs_io": 0
+		},
+		{
+			"date": "2023-05-30 23:15:11",
+			"cpu": 1.93,
+			"memory": 29.4,
+			"disk_io": 0,
+			"net_in": 0,
+			"net_out": 0,
+			"vfs_io": 0
+		},
+		{
+			"date": "2023-05-30 23:15:10",
+			"cpu": 2.13,
+			"memory": 29.4,
+			"disk_io": 0,
+			"net_in": 0,
+			"net_out": 0,
+			"vfs_io": 0
+		},
+		{
+			"date": "2023-05-30 23:15:10",
+			"cpu": 2.46,
+			"memory": 29.4,
+			"disk_io": 0,
+			"net_in": 0,
+			"net_out": 0,
+			"vfs_io": 0
+		},
+		{
+			"date": "2023-05-30 23:15:09",
+			"cpu": 2.43,
+			"memory": 29.4,
+			"disk_io": 0,
+			"net_in": 0,
+			"net_out": 0,
+			"vfs_io": 0
+		},
+		{
+			"date": "2023-05-30 23:15:09",
+			"cpu": 2.09,
+			"memory": 29.4,
+			"disk_io": 3,
+			"net_in": 0,
+			"net_out": 0,
+			"vfs_io": 2
+		},
+		{
+			"date": "2023-05-30 23:15:08",
+			"cpu": 2.2,
+			"memory": 29.4,
+			"disk_io": 0,
+			"net_in": 0,
+			"net_out": 0,
+			"vfs_io": 1
+		},
+		{
+			"date": "2023-05-30 23:15:08",
+			"cpu": 2.05,
+			"memory": 29.4,
+			"disk_io": 0,
+			"net_in": 0,
+			"net_out": 0,
+			"vfs_io": 0
+		},
+		{
+			"date": "2023-05-30 23:15:07",
+			"cpu": 2.89,
+			"memory": 29.4,
+			"disk_io": 0,
+			"net_in": 0,
+			"net_out": 0,
+			"vfs_io": 0
+		},
+		{
+			"date": "2023-05-30 23:15:07",
+			"cpu": 2.04,
+			"memory": 29.4,
+			"disk_io": 0,
+			"net_in": 0,
+			"net_out": 0,
+			"vfs_io": 0
+		},
+		{
+			"date": "2023-05-30 23:15:06",
+			"cpu": 1.89,
+			"memory": 29.4,
+			"disk_io": 0,
+			"net_in": 0,
+			"net_out": 0,
+			"vfs_io": 0
+		},
+		{
+			"date": "2023-05-30 23:15:06",
+			"cpu": 2.76,
+			"memory": 29.4,
+			"disk_io": 10,
+			"net_in": 0,
+			"net_out": 0,
+			"vfs_io": 0
+		},
+		{
+			"date": "2023-05-30 23:15:05",
+			"cpu": 1.86,
+			"memory": 29.4,
+			"disk_io": 0,
+			"net_in": 0,
+			"net_out": 0,
+			"vfs_io": 0
+		},
+		{
+			"date": "2023-05-30 23:15:05",
+			"cpu": 2.4,
+			"memory": 29.4,
+			"disk_io": 0,
+			"net_in": 0,
+			"net_out": 0,
+			"vfs_io": 0
+		},
+		{
+			"date": "2023-05-30 23:15:04",
+			"cpu": 2.05,
+			"memory": 29.4,
+			"disk_io": 0,
+			"net_in": 0,
+			"net_out": 0,
+			"vfs_io": 0
+		},
+		{
+			"date": "2023-05-30 23:15:04",
+			"cpu": 2.7,
+			"memory": 29.4,
+			"disk_io": 0,
+			"net_in": 0,
+			"net_out": 0,
+			"vfs_io": 0
+		},
+		{
+			"date": "2023-05-30 23:15:03",
+			"cpu": 2.76,
+			"memory": 29.4,
+			"disk_io": 0,
+			"net_in": 0,
+			"net_out": 0,
+			"vfs_io": 0
+		},
+		{
+			"date": "2023-05-30 23:15:02",
+			"cpu": 2.57,
+			"memory": 29.4,
+			"disk_io": 0,
+			"net_in": 0,
+			"net_out": 0,
+			"vfs_io": 0
+		},
+		{
+			"date": "2023-05-30 23:15:02",
+			"cpu": 2.59,
+			"memory": 29.4,
+			"disk_io": 1,
+			"net_in": 0,
+			"net_out": 0,
+			"vfs_io": 0
+		},
+		{
+			"date": "2023-05-30 23:15:02",
+			"cpu": 2.5,
+			"memory": 29.4,
+			"disk_io": 0,
+			"net_in": 0,
+			"net_out": 0,
+			"vfs_io": 1
+		},
+		{
+			"date": "2023-05-30 23:15:01",
+			"cpu": 2.29,
+			"memory": 29.4,
+			"disk_io": 0,
+			"net_in": 0,
+			"net_out": 0,
+			"vfs_io": 0
+		},
+		{
+			"date": "2023-05-30 23:15:00",
+			"cpu": 2.52,
+			"memory": 29.4,
+			"disk_io": 0,
+			"net_in": 0,
+			"net_out": 0,
+			"vfs_io": 0
+		},
+		{
+			"date": "2023-05-30 23:15:00",
+			"cpu": 6.12,
+			"memory": 29.4,
+			"disk_io": 0,
+			"net_in": 0,
+			"net_out": 0,
+			"vfs_io": 0
+		},
+		{
+			"date": "2023-05-30 23:15:00",
+			"cpu": 3.33,
+			"memory": 29.4,
+			"disk_io": 0,
+			"net_in": 0,
+			"net_out": 0,
+			"vfs_io": 0
+		},
+		{
+			"date": "2023-05-30 23:14:59",
+			"cpu": 8.34,
+			"memory": 29.4,
+			"disk_io": 0,
+			"net_in": 0,
+			"net_out": 0,
+			"vfs_io": 2
+		},
+		{
+			"date": "2023-05-30 23:14:58",
+			"cpu": 7.37,
+			"memory": 29.4,
+			"disk_io": 0,
+			"net_in": 1,
+			"net_out": 0,
+			"vfs_io": 1
+		}
+	]
 }

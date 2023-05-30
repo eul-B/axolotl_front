@@ -10,6 +10,29 @@ import Chart from "react-apexcharts";
 import axios from 'axios';
 
 function App() {
+  const updateName = async () => {
+    const url = 'http://localhost:5000/disable_time';
+    const requestOptions = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        
+      })
+    };
+
+    try {
+      const response = await axios.post(url, requestOptions.data, {
+        headers: requestOptions.headers
+      });
+      console.log(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  
+
 
   const [node, setNode] = useState([]);
   const [link, setLink] = useState([]);
@@ -27,6 +50,7 @@ useEffect(() => {
           setNode(modifiedData);
           setLink(modifiedTmp);
           setLength(Object.keys(modifiedData).length);
+          updateName();
           localStorage.setItem('length', modifiedData.length);
         }
       } else {
